@@ -9,27 +9,13 @@ import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import { green } from '@material-ui/core/colors';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-    color: green
-  },
-}));
-
 function App() {
   const classes = useStyles();
   return (
     <div className="App">
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+          <IconButton edge="start" color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
@@ -41,5 +27,15 @@ function App() {
     </div>
   );
 }
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  title: {
+    flexGrow: 1,
+    color: green
+  },
+}));
 
 export default App;
