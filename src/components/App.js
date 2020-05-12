@@ -1,16 +1,21 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { green } from '@material-ui/core/colors';
 
-function App() {
+
+import EmailCaptureModal from './EmailCaptureModal';
+
+const App = () => {
   const classes = useStyles();
+
+  const [isContactModalOpen, setIsContactModalOpen] = useState(true)
+
+  const toggleContactModal = () => {
+    setIsContactModalOpen(!isContactModalOpen);
+  }
+
   return (
     <div className="App">
       <AppBar position="static">
@@ -22,8 +27,13 @@ function App() {
             News
           </Typography>
           <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={toggleContactModal}>Contact</Button>
         </Toolbar>
       </AppBar>
+      <EmailCaptureModal
+        isOpen={isContactModalOpen}
+        toggleModal={toggleContactModal}
+      />
     </div>
   );
 }
