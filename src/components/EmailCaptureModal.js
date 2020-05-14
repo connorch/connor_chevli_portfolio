@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField, Modal, Grid, Button, IconButton } from '@material-ui/core';
+import { TextField, Modal, Grid, IconButton, Fade } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 
 const EmailCaptureModal = ({ isOpen, toggleModal }) => {
   const classes = useStyles();
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -16,40 +17,41 @@ const EmailCaptureModal = ({ isOpen, toggleModal }) => {
   }
 
   return (
-    <Modal
-      open={isOpen}
-      onClose={toggleModal}
-    >
-      <div
-        className={classes.modal}
-      >
-        <form
-          onSubmit={handleSubmit}
-        >
+    <Modal open={isOpen} onClose={toggleModal}>
+      <Fade in={isOpen} className={classes.modal}>
+        <form onSubmit={handleSubmit}>
           <Grid
             container
             justify="center"
             alignItems="center"
             spacing={3}
           >
-            <Grid
-              item
-              xs={12}
+            <Grid item xs={12}
+            >
+              <TextField
+                variant="outlined"
+                id="name"
+                label="Name"
+                onChange={e => setName(e.target.value)}
+                value={name}
+                className={classes.formField}
+                autofocus
+              />
+            </Grid>
+            <Grid item xs={12}
             >
               <TextField
                 variant="outlined"
                 id="email"
-                label="Email Address"
+                label="Email"
+                type="email"
                 onChange={e => setEmail(e.target.value)}
                 value={email}
                 className={classes.formField}
                 autofocus
               />
             </Grid>
-            <Grid
-              item
-              xs={12}
-            >
+            <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 label="Message"
@@ -62,20 +64,18 @@ const EmailCaptureModal = ({ isOpen, toggleModal }) => {
                 className={classes.formField}
               />
             </Grid>
-            <Grid
-              item
-              xs={12}
-            >
+            <Grid item xs={12}>
               <IconButton
                 aria-label="send"
                 className={classes.sendButton}
+                onClick={handleSubmit}
               >
                 <SendIcon />
               </IconButton>
             </Grid>
           </Grid>
         </form>
-      </div>
+      </Fade>
     </Modal >
   )
 }

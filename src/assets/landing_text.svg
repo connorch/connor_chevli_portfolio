@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="423px" height="165px" viewBox="0 0 423 165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>LandingText</title>
+    <g id="Landing2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-weight="normal">
+        <g id="Desktop" transform="translate(-305.000000, -184.000000)" fill="#37474F">
+            <g id="Section1" transform="translate(-1.000000, 0.000000)">
+                <g id="LandingText" transform="translate(312.000000, 178.000000)">
+                    <text id="A-Full-Stack-Web-Developer" font-family="Baskerville" font-size="26">
+                        <tspan x="66.2172852" y="147">a full-stack web developer.</tspan>
+                    </text>
+                    <text id="I’m-Connor," font-family="KaushanScript-Regular, Kaushan Script" font-size="86">
+                        <tspan x="0.061" y="93">I’m Connor,</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
