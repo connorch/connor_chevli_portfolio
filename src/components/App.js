@@ -1,9 +1,11 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import EmailCaptureModal from './EmailCaptureModal';
 import NavBar from './NavBar';
 import About from './About';
-import { blueGrey, green } from '@material-ui/core/colors';
+import { blueGrey } from '@material-ui/core/colors';
+import { Route, Switch } from 'react-router-dom';
+import Work from './Work';
 
 const appTheme = createMuiTheme({
   palette: {
@@ -43,7 +45,10 @@ const App = () => {
   return (
     <ThemeProvider theme={appTheme}>
       <NavBar toggleContactModal={toggleContactModal} />
-      <About />
+      <Switch>
+        <Route path="/" component={About} exact />
+        <Route path="/work" component={Work} />
+      </Switch>
       <EmailCaptureModal
         isOpen={isContactModalOpen}
         toggleModal={toggleContactModal}
