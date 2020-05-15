@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Typography, Button } from '@material-ui/core';
-import portrait from '../assets/portrait_circle.png';
-import resumePDF from '../assets/connor_chevli_resume.pdf';
+import { Box, Typography, Button } from '@material-ui/core';
+import portrait from '../../assets/portrait_circle.png';
+import resumePDF from '../../assets/connor_chevli_resume.pdf';
 
 const AboutSectionTwo = () => {
   const classes = useStyles();

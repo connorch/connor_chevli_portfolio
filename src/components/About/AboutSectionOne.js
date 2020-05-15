@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Collapse } from '@material-ui/core';
-import mountainImage from '../assets/mountain.svg';
-import landingText from '../assets/landing_text.svg';
+import { Box, Grid } from '@material-ui/core';
+import mountainImage from '../../assets/mountain.svg';
+import landingText from '../../assets/landing_text.svg';
 import { blueGrey, red } from '@material-ui/core/colors';
 
 
@@ -13,12 +13,12 @@ const AboutSectionOne = () => {
     <Grid container className={classes.sectionOne}>
       <Grid item xs={12}>
         <Box display="flex" justifyContent="center">
-          <img src={landingText} className={classes.landingText} />
+          <img alt="landing_text" src={landingText} className={classes.landingText} />
         </Box>
       </Grid>
       <Grid item xs={12}>
         <Box display="flex" justifyContent="center" overflow="hidden" >
-          <img src={mountainImage} className={classes.mountainImage} />
+          <img alt="landing_mountain" src={mountainImage} className={classes.mountainImage} />
         </Box>
       </Grid>
     </Grid>

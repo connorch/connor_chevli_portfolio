@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import EmailCaptureModal from './EmailCaptureModal';
 import NavBar from './NavBar';
-import About from './About';
+import About from './About/About';
 import { blueGrey } from '@material-ui/core/colors';
 import { Route, Switch } from 'react-router-dom';
-import Work from './Work';
+import Work from './Work/Work';
 
 const appTheme = createMuiTheme({
   palette: {
