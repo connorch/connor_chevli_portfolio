@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Grid, Typography } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
-import ProfessionalEntry from './ProfessionalEntry';
 import WorkEntry from './WorkEntry';
 import { WORK_ENTRY_TYPES } from '../../constants/WorkEntryTypes';
 
@@ -14,7 +13,12 @@ const Work = () => {
     <Box className={classes.workContainer}>
       {
         experience.professional.map((company) => (
-          <ProfessionalEntry professionalData={company} />
+          <WorkEntry workData={company} />
+        ))
+      }
+      {
+        experience.projects.map((project) => (
+          <WorkEntry workData={project} />
         ))
       }
     </Box>
@@ -32,7 +36,7 @@ const useStyles = makeStyles(theme => ({
 const experience = {
   professional: [
     {
-      companyName: "Acornpack",
+      name: "Acornpack",
       title: "Principal Software Engineer",
       team: "B2B Initiative",
       startDate: "February 2020",
@@ -44,7 +48,7 @@ const experience = {
       ]
     },
     {
-      companyName: "Wayfair",
+      name: "Wayfair",
       title: "Software Engineer",
       team: "Promotions Team",
       startDate: "January 2018",
@@ -60,7 +64,7 @@ const experience = {
       ]
     },
     {
-      companyName: "athenahealth",
+      name: "athenahealth",
       title: "Software Engineer",
       team: "Analytics Team",
       startDate: "June 2017",
@@ -76,7 +80,7 @@ const experience = {
   ],
   projects: [
     {
-      projectName: "Chow",
+      name: "Chow",
       description: "iOS, Android, and Web meal-ordering app designed to assist restaurants affected by COVID-19",
       bullets: [
         "Create native iOS, Android, and Web apps using Flutter framework for cross-platform development.",
@@ -85,7 +89,7 @@ const experience = {
       ]
     },
     {
-      projectName: "Journey",
+      name: "Journey",
       description: "Web and Alexa powered journal and psychoanalysis tool",
       bullets: [
         "Build RESTful API with Node, Express, and a relational DB for extensibility and maintainability.",

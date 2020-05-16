@@ -34,9 +34,6 @@ const appTheme = createMuiTheme({
       fontWeight: 300,
       lineHeight: 1.4
     },
-    body1: {
-      // letterSpacing: "em"
-    }
   },
 });
 
