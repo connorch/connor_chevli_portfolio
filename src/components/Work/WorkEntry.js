@@ -8,10 +8,11 @@ import WayfairLogo from '../../assets/wayfair_logo.svg';
 import AthenahealthLogo from '../../assets/athenahealth_logo.svg';
 import ChowImage from '../../assets/chow_map.png';
 import JourneyImage from '../../assets/journey_screenshot.png';
-import { Box, ButtonBase } from '@material-ui/core';
+import { Box, ButtonBase, Divider } from '@material-ui/core';
+import { red } from '@material-ui/core/colors';
 
-const WorkEntry = ({ workData }) => {
-  const { name, title, team, startDate, endDate, bullets } = workData;
+const WorkEntry = ({ workData, entryType }) => {
+  const { name, title, description, startDate, endDate, bullets } = workData;
   const classes = useStyles();
 
   const workImages = {
@@ -22,59 +23,81 @@ const WorkEntry = ({ workData }) => {
     Journey: JourneyImage
   }
 
-
   return (
-    <Box className={classes.container}>
-      <Grid container spacing={4}>
-        <Grid item>
-          <ButtonBase>
-            <img className={classes.image} alt="complex" src={workImages[name]} />
-          </ButtonBase>
-        </Grid>
-        <Grid item xs={12} sm container>
-          <Grid item xs container direction="column">
-            <Grid item>
-              <Typography variant="h3" >{name}</Typography>
-            </Grid>
-            {(startDate && endDate) &&
+    <Box className={classes[name]}>
+      <Box className={classes.section}>
+        <Grid container spacing={4} justify="center">
+          <Grid item >
+            <ButtonBase>
+              <img className={classes.image} alt="complex" src={workImages[name]} />
+            </ButtonBase>
+          </Grid>
+          <Grid item sm container>
+            <Grid item container direction="column">
               <Grid item>
-                <Typography className={classes.infoText} variant="h6">{startDate} - {endDate}</Typography>
+                <Typography variant="h5" color="textPrimary">{name}</Typography>
               </Grid>
-            }
-            <Grid item>
-              <Typography className={classes.infoText} variant="h6" gutterBottom>{title} on the {team}</Typography>
-            </Grid>
-            <Grid item container spacing={1}>
-              {bullets.map(bullet => (
+              {(startDate && endDate) &&
                 <Grid item>
-                  <Typography variant="body1"><BulletPoint className={classes.bulletPoint} />{bullet}</Typography>
+                  <Typography variant="h6" color="textPrimary">{startDate} - {endDate}</Typography>
                 </Grid>
-              ))}
+              }
+              <Grid item>
+                <Typography variant="h6" color="textPrimary" gutterBottom>
+                  {title && `${title} on the `}
+                  {description}
+                </Typography>
+              </Grid>
+              <Grid item container spacing={1}>
+                {bullets.map(bullet => (
+                  <Grid item>
+                    <Typography variant="body1" color="secondary"><BulletPoint className={classes.bulletPoint} />{bullet}</Typography>
+                  </Grid>
+                ))}
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </Box>
+        <Divider className={classes.divider} />
+      </Box>
+    </Box >
   );
 }
 
 const useStyles = makeStyles((theme) => ({
-  container: {
+  section: {
     padding: theme.spacing(2),
     margin: 'auto',
-    maxWidth: 800,
+    maxWidth: 1000,
+  },
+  divider: {
+    marginTop: 30
+  },
+  // Acornpack: {
+  //   backgroundColor: deepOrange[100]
+  // },
+  // Wayfair: {
+  //   backgroundColor: deepPurple[100]
+  // },
+  // athenahealth: {
+  //   backgroundColor: lightGreen[100]
+  // },
+  // Chow: {
+  //   backgroundColor: blueGrey[100]
+  // },
+  // Journey: {
+  //   backgroundColor: deepPurple[100]
+  // },
+  professional: {
+    backgroundColor: 'transparent'
+  },
+  projects: {
+    backgroundColor: red[300]
   },
   image: {
     margin: 'auto',
     display: 'block',
     width: 200,
-    // height: 200,
-  },
-  infoText: {
-    textAlign: 'left',
-    // [theme.breakpoints.down('xs')]: {
-    //   textAlign: 'left'
-    // }
   },
   bulletPoint: {
     height: 8

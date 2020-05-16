@@ -13,7 +13,7 @@ const AboutSectionTwo = () => {
       </Box>
       <Box className={classes.aboutTextContainer}>
         <Typography variant="h4" color="textSecondary" className={classes.aboutText}>
-          I’m a full-stack web developer based in Boston, MA.  I love bringing ideas to life and creating beatiful and intuitive user experiences.
+          I’m a full-stack web developer based in Boston, MA.  I love bringing ideas to life, manipulating complex data sets, and creating beatiful user experiences.
         </Typography>
       </Box>
       <Box className={classes.downloadResumeButton}>

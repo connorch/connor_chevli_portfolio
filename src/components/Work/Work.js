@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Typography } from '@material-ui/core';
+import { Box, Grid, Typography, Divider } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 import WorkEntry from './WorkEntry';
-import { WORK_ENTRY_TYPES } from '../../constants/WorkEntryTypes';
+import WORK_ENTRY_TYPES from '../../constants/WorkEntryTypes';
 
 const Work = () => {
   const classes = useStyles();
@@ -11,25 +11,30 @@ const Work = () => {
 
   return (
     <Box className={classes.workContainer}>
+      <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+        Professional Experience
+      </Typography>
       {
         experience.professional.map((company) => (
-          <WorkEntry workData={company} />
+          <WorkEntry workData={company} entryType={WORK_ENTRY_TYPES.professional} />
         ))
       }
+      <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+        Projects
+      </Typography>
       {
         experience.projects.map((project) => (
-          <WorkEntry workData={project} />
+          <WorkEntry workData={project} entryType={WORK_ENTRY_TYPES.projects} />
         ))
       }
     </Box>
   );
 }
 const useStyles = makeStyles(theme => ({
-  // test: { color: green[400] }
   workContainer: {
     paddingTop: 100,
     backgroundColor: theme.palette.primary.main
-  }
+  },
 }));
 
 
@@ -38,7 +43,7 @@ const experience = {
     {
       name: "Acornpack",
       title: "Principal Software Engineer",
-      team: "B2B Initiative",
+      description: "B2B Initiative",
       startDate: "February 2020",
       endDate: "Present",
       companyUrl: "https://www.acornpack.com/",
@@ -50,7 +55,7 @@ const experience = {
     {
       name: "Wayfair",
       title: "Software Engineer",
-      team: "Promotions Team",
+      description: "Promotions Team",
       startDate: "January 2018",
       endDate: "February 2020",
       companyUrl: "https://www.wayfair.com/",
@@ -66,7 +71,7 @@ const experience = {
     {
       name: "athenahealth",
       title: "Software Engineer",
-      team: "Analytics Team",
+      description: "Analytics Team",
       startDate: "June 2017",
       endDate: "October 2017",
       companyUrl: "https://www.athenahealth.com/",
@@ -81,7 +86,7 @@ const experience = {
   projects: [
     {
       name: "Chow",
-      description: "iOS, Android, and Web meal-ordering app designed to assist restaurants affected by COVID-19",
+      description: "iOS, Android, and Web meal-ordering app that assists restaurants affected by COVID-19",
       bullets: [
         "Create native iOS, Android, and Web apps using Flutter framework for cross-platform development.",
         "Design and build beautiful map UI and order flow for simple and intuitive user experience.",

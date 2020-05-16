@@ -18,10 +18,9 @@ const appTheme = createMuiTheme({
     text: {
       primary: blueGrey[800],
       secondary: blueGrey[100],
-
     },
     lightBlueGrey: blueGrey[100],
-    darkBlueGrey: blueGrey[800]
+    darkBlueGrey: blueGrey[800],
   },
   typography: {
     fontFamily: '"Lato", sans-serif',
@@ -30,6 +29,10 @@ const appTheme = createMuiTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 700,
     fontWeightBold: 900,
+    h2: {
+      fontWeight: 400,
+      fontSize: "3.5rem"
+    },
     h6: {
       fontWeight: 300,
       lineHeight: 1.4
