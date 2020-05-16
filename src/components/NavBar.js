@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Button, ButtonGroup } from '@material-ui/core';
 import { NavLink as RouterLink } from 'react-router-dom';
-import { blueGrey } from '@material-ui/core/colors';
 
 const NavBar = ({ toggleContactModal }) => {
   const classes = useStyles();

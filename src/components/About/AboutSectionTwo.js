@@ -1,8 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Typography, Button } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import portrait from '../../assets/portrait_circle.png';
-import resumePDF from '../../assets/connor_chevli_resume.pdf';
 
 const AboutSectionTwo = () => {
   const classes = useStyles();
@@ -51,9 +50,5 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 650,
     textAlign: 'center',
     fontWeight: theme.typography.fontWeightLight
-  },
-  downloadResumeButton: {
-    marginTop: 20,
-    textAlign: 'center',
   }
 }));

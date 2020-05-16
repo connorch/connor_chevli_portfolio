@@ -5,7 +5,6 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import EmailIcon from '@material-ui/icons/Email';
 import resumePDF from '../assets/connor_chevli_resume.pdf';
-import VisibilityIcon from '@material-ui/icons/Visibility';
 
 const Footer = ({ dark = false }) => {
   const classes = useStyles();
