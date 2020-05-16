@@ -1,24 +1,31 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Grid, Typography } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
+import ProfessionalEntry from './ProfessionalEntry';
+import WorkEntry from './WorkEntry';
+import { WORK_ENTRY_TYPES } from '../../constants/WorkEntryTypes';
 
 const Work = () => {
   const classes = useStyles();
   console.log(experience.professional[0].startDate);
 
   return (
-    <Grid container className={classes.sectionOne}>
-      <Grid item xs={12}>
-        <Box display="flex" justifyContent="center">
-          <Typography className={classes.test}>testing123</Typography>
-        </Box>
-      </Grid>
-    </Grid>
+    <Box className={classes.workContainer}>
+      {
+        experience.professional.map((company) => (
+          <ProfessionalEntry professionalData={company} />
+        ))
+      }
+    </Box>
   );
 }
 const useStyles = makeStyles(theme => ({
-  test: { color: green[400] }
+  // test: { color: green[400] }
+  workContainer: {
+    paddingTop: 100,
+    backgroundColor: theme.palette.primary.main
+  }
 }));
 
 
@@ -30,6 +37,7 @@ const experience = {
       team: "B2B Initiative",
       startDate: "February 2020",
       endDate: "Present",
+      companyUrl: "https://www.acornpack.com/",
       bullets: [
         "Architect Koa and SQL backend, design UI, and lead initiatives for an upcoming B2B interface.",
         "Increase cash flow by streamlining the Vue.JS UI and lowering the barrier-to-entry for users."
@@ -41,6 +49,7 @@ const experience = {
       team: "Promotions Team",
       startDate: "January 2018",
       endDate: "February 2020",
+      companyUrl: "https://www.wayfair.com/",
       bullets: [
         "Create several features using JavaScript and PHP to provide an immersive UX and drive millions in sales.",
         "Implement tools with React, PHP, and MSSQL to manage sale events, promotions, and all coupon codes.",
@@ -55,7 +64,14 @@ const experience = {
       title: "Software Engineer",
       team: "Reporting Experience and Internal Data Product Teams",
       startDate: "June 2017",
-      endDate: "October 2017"
+      endDate: "October 2017",
+      companyUrl: "https://www.athenahealth.com/",
+      bullets: [
+        "Create microservice Express app with connection to monolithic Perl backend for intuitive and secure navigation between analytics tools.",
+        "Build out React app with Redux, CSS Modules, and SASS for efficient and scalable development of team.",
+        "Design analytics tool with Angular to drive data transparency for over 1,000 active users.",
+        "Capture data with SQL to track usage of over 100,000 users across athenahealth products."
+      ]
     }
   ],
   projects: [
