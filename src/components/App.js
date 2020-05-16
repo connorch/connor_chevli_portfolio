@@ -31,7 +31,7 @@ const appTheme = createMuiTheme({
     fontWeightMedium: 700,
     fontWeightBold: 900,
     h6: {
-      fontWeight: 400,
+      fontWeight: 300,
       lineHeight: 1.4
     },
     body1: {

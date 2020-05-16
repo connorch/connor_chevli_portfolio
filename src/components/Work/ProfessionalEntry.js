@@ -22,25 +22,26 @@ const ProfessionalEntry = ({ professionalData }) => {
 
   return (
     <Box className={classes.container}>
-      <Grid container spacing={2}>
+      <Grid container spacing={4}>
         <Grid item>
           <img className={classes.image} alt="complex" src={logoSVGs[professionalData.companyName]} />
         </Grid>
         <Grid item xs={12} sm container>
-          <Grid item xs container direction="column" spacing={2}>
-            <Grid item xs>
-              <Grid item container justify="space-between">
-                <Grid item>
-                  <Typography variant="h3" >{companyName}</Typography>
-                  {/* <Typography variant="h6" gutterBottom>{team}</Typography> */}
-                </Grid>
-                <Grid item>
-                  <Typography className={classes.infoText} variant="h6">{startDate} - {endDate}</Typography>
-                  <Typography className={classes.infoText} variant="h6" gutterBottom>{title}</Typography>
-                </Grid>
-              </Grid>
+          <Grid item xs container direction="column">
+            <Grid item>
+              <Typography variant="h3" >{companyName}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.infoText} variant="h6">{startDate} - {endDate}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.infoText} variant="h6" gutterBottom>{title} on the {team}</Typography>
+            </Grid>
+            <Grid item container spacing={1}>
               {bullets.map(bullet => (
-                <Typography variant="body1"><BulletPoint className={classes.bulletPoint} />{bullet}</Typography>
+                <Grid item>
+                  <Typography variant="body1"><BulletPoint className={classes.bulletPoint} />{bullet}</Typography>
+                </Grid>
               ))}
             </Grid>
           </Grid>
@@ -63,10 +64,10 @@ const useStyles = makeStyles((theme) => ({
     height: 200,
   },
   infoText: {
-    textAlign: 'right',
-    [theme.breakpoints.down('xs')]: {
-      textAlign: 'left'
-    }
+    textAlign: 'left',
+    // [theme.breakpoints.down('xs')]: {
+    //   textAlign: 'left'
+    // }
   },
   bulletPoint: {
     height: 8
