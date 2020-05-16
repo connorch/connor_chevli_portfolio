@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import AboutSectionOne from './AboutSectionOne';
 import AboutSectionTwo from './AboutSectionTwo';
+import Footer from '../Footer';
 
 
 const About = () => {
@@ -8,6 +9,7 @@ const About = () => {
     <Fragment>
       <AboutSectionOne />
       <AboutSectionTwo />
+      <Footer dark />
     </Fragment >
   );
 }

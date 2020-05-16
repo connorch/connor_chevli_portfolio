@@ -9,15 +9,12 @@ const AboutSectionTwo = () => {
   return (
     <Box className={classes.section}>
       <Box display="flex" justifyContent="center" className={classes.portraitContainer} >
-        <img src={portrait} className={classes.portrait} />
+        <img src={portrait} className={classes.portrait} alt="connor_chevli_portrait" />
       </Box>
       <Box className={classes.aboutTextContainer}>
         <Typography variant="h4" color="textSecondary" className={classes.aboutText}>
           I’m a full-stack web developer based in Boston, MA.  I love bringing ideas to life, manipulating complex data sets, and creating beatiful user experiences.
         </Typography>
-      </Box>
-      <Box className={classes.downloadResumeButton}>
-        <Button variant="contained" color="primary" href={resumePDF}>View My Resume</Button>
       </Box>
     </Box>
   );

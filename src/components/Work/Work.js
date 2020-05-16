@@ -4,30 +4,34 @@ import { Box, Grid, Typography, Divider } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 import WorkEntry from './WorkEntry';
 import WORK_ENTRY_TYPES from '../../constants/WorkEntryTypes';
+import Footer from '../Footer';
 
 const Work = () => {
   const classes = useStyles();
   console.log(experience.professional[0].startDate);
 
   return (
-    <Box className={classes.workContainer}>
-      <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-        Professional Experience
+    <Fragment>
+      <Box className={classes.workContainer}>
+        <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+          Professional Experience
       </Typography>
-      {
-        experience.professional.map((company) => (
-          <WorkEntry workData={company} entryType={WORK_ENTRY_TYPES.professional} />
-        ))
-      }
-      <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-        Projects
+        {
+          experience.professional.map((company) => (
+            <WorkEntry workData={company} entryType={WORK_ENTRY_TYPES.professional} />
+          ))
+        }
+        <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+          Projects
       </Typography>
-      {
-        experience.projects.map((project) => (
-          <WorkEntry workData={project} entryType={WORK_ENTRY_TYPES.projects} />
-        ))
-      }
-    </Box>
+        {
+          experience.projects.map((project) => (
+            <WorkEntry workData={project} entryType={WORK_ENTRY_TYPES.projects} />
+          ))
+        }
+      </Box>
+      <Footer />
+    </Fragment>
   );
 }
 const useStyles = makeStyles(theme => ({

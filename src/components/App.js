@@ -6,6 +6,7 @@ import About from './About/About';
 import { blueGrey } from '@material-ui/core/colors';
 import { Route, Switch } from 'react-router-dom';
 import Work from './Work/Work';
+import Footer from './Footer';
 
 const appTheme = createMuiTheme({
   palette: {
