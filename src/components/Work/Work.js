@@ -62,7 +62,7 @@ const experience = {
     {
       companyName: "athenahealth",
       title: "Software Engineer",
-      team: "Reporting Experience and Internal Data Product Teams",
+      team: "Analytics Team",
       startDate: "June 2017",
       endDate: "October 2017",
       companyUrl: "https://www.athenahealth.com/",

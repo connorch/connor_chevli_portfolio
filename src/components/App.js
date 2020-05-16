@@ -29,7 +29,14 @@ const appTheme = createMuiTheme({
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 700,
-    fontWeightBold: 900
+    fontWeightBold: 900,
+    h6: {
+      fontWeight: 400,
+      lineHeight: 1.4
+    },
+    body1: {
+      // letterSpacing: "em"
+    }
   },
 });
 
