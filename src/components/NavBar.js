@@ -12,7 +12,7 @@ const NavBar = ({ toggleContactModal }) => {
         <ButtonGroup variant="text">
           <Button component={RouterLink} to="/" exact activeClassName={classes.active}>About</Button>
           <Button component={RouterLink} to="/work" activeClassName={classes.active} >Work</Button>
-          <Button onClick={toggleContactModal}>Contact</Button>
+          <Button component={RouterLink} to="/contact" activeClassName={classes.active} >Contact</Button>
         </ButtonGroup>
       </Toolbar>
     </AppBar>

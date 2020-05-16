@@ -3,10 +3,10 @@ import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/sty
 import EmailCaptureModal from './EmailCaptureModal';
 import NavBar from './NavBar';
 import About from './About/About';
+import Contact from './Contact';
+import Work from './Work/Work';
 import { blueGrey } from '@material-ui/core/colors';
 import { Route, Switch } from 'react-router-dom';
-import Work from './Work/Work';
-import Footer from './Footer';
 
 const appTheme = createMuiTheme({
   palette: {
@@ -42,8 +42,6 @@ const appTheme = createMuiTheme({
 });
 
 const App = () => {
-  const classes = useStyles();
-
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const toggleContactModal = () => {
@@ -56,6 +54,7 @@ const App = () => {
       <Switch>
         <Route path="/" component={About} exact />
         <Route path="/work" component={Work} />
+        <Route path="/contact" component={Contact} />
       </Switch>
       <EmailCaptureModal
         isOpen={isContactModalOpen}
@@ -64,8 +63,5 @@ const App = () => {
     </ThemeProvider>
   );
 }
-
-const useStyles = makeStyles(theme => ({
-}));
 
 export default App;
