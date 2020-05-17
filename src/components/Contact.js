@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <Box className={classes.container}>
       <Paper className={classes.paper}>
-        <form name="contact" method="post" data-netlify="true">
+        <form name="contact" method="post">
           <input type="hidden" name="form-name" value="contact" />
           <Grid
             container
