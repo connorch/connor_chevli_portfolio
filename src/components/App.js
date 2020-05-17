@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
-import EmailCaptureModal from './EmailCaptureModal';
+import React from 'react';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import NavBar from './NavBar';
 import About from './About/About';
 import Contact from './Contact';
@@ -42,24 +41,14 @@ const appTheme = createMuiTheme({
 });
 
 const App = () => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
-
-  const toggleContactModal = () => {
-    setIsContactModalOpen(!isContactModalOpen);
-  }
-
   return (
     <ThemeProvider theme={appTheme}>
-      <NavBar toggleContactModal={toggleContactModal} />
+      <NavBar />
       <Switch>
         <Route path="/" component={About} exact />
         <Route path="/work" component={Work} />
         <Route path="/contact" component={Contact} />
       </Switch>
-      <EmailCaptureModal
-        isOpen={isContactModalOpen}
-        toggleModal={toggleContactModal}
-      />
     </ThemeProvider>
   );
 }

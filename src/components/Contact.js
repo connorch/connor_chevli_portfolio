@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Grid, TextField, makeStyles, IconButton, Paper, Box } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 
 const Contact = () => {
   const classes = useStyles();
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
 
   const handleSubmit = e => {
     debugger;
@@ -16,7 +12,8 @@ const Contact = () => {
   return (
     <Box className={classes.container}>
       <Paper className={classes.paper}>
-        <form onSubmit={handleSubmit}>
+        <form name="contact" method="post" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
           <Grid
             container
             justify="center"
@@ -30,8 +27,7 @@ const Contact = () => {
                 color="secondary"
                 id="name"
                 label="Name"
-                onChange={e => setName(e.target.value)}
-                value={name}
+                type="text"
                 className={classes.formField}
               />
             </Grid>
@@ -43,8 +39,6 @@ const Contact = () => {
                 id="email"
                 label="Email"
                 type="email"
-                onChange={e => setEmail(e.target.value)}
-                value={email}
                 className={classes.formField}
                 autofocus
               />
@@ -58,8 +52,6 @@ const Contact = () => {
                 multiline
                 rows={6}
                 rowsMax={16}
-                onChange={e => setMessage(e.target.value)}
-                value={message}
                 className={classes.formField}
               />
             </Grid>
@@ -67,7 +59,7 @@ const Contact = () => {
               <IconButton
                 aria-label="send"
                 className={classes.sendButton}
-                onClick={handleSubmit}
+                type="submit"
               >
                 <SendIcon />
               </IconButton>

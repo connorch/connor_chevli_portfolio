@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Button, ButtonGroup } from '@material-ui/core';
 import { NavLink as RouterLink } from 'react-router-dom';
 
-const NavBar = ({ toggleContactModal }) => {
+const NavBar = () => {
   const classes = useStyles();
 
   return (
