@@ -25,8 +25,9 @@ const Contact = () => {
               <TextField
                 variant="outlined"
                 color="secondary"
-                id="name"
                 label="Name"
+                id="name"
+                name="name"
                 type="text"
                 className={classes.formField}
               />
@@ -36,8 +37,9 @@ const Contact = () => {
               <TextField
                 variant="outlined"
                 color="secondary"
-                id="email"
                 label="Email"
+                id="email"
+                name="email"
                 type="email"
                 className={classes.formField}
                 autofocus
@@ -48,6 +50,8 @@ const Contact = () => {
                 variant="outlined"
                 color="secondary"
                 label="Message"
+                id="message"
+                name="message"
                 type="text"
                 multiline
                 rows={6}
