@@ -15,22 +15,22 @@ const Footer = ({ dark = false }) => {
     <Grid container className={`${classes.footerContainer} ${dark ? classes.darkFooter : classes.lightFooter}`} justify="center">
       <Grid item>
         <Box className={classes.downloadResumeButton}>
-          <Button variant="contained" size="small" color={footerTextColor} disableElevation href={resumePDF}>View My Resume</Button>
+          <Button variant="contained" size="small" color={footerTextColor} disableElevation href={resumePDF} target="_blank">View My Resume</Button>
         </Box>
       </Grid>
       <Grid item container justify="center">
         <Grid item>
-          <IconButton color={footerTextColor} href="https://www.linkedin.com/in/connorch/">
+          <IconButton color={footerTextColor} href="https://www.linkedin.com/in/connorch/" target="_blank">
             <LinkedInIcon />
           </IconButton>
         </Grid>
         <Grid item>
-          <IconButton color={footerTextColor} href="https://github.com/connorch">
+          <IconButton color={footerTextColor} href="https://github.com/connorch" target="_blank">
             <GitHubIcon />
           </IconButton>
         </Grid>
         <Grid item>
-          <IconButton color={footerTextColor} href="mailto:connorchev@gmail.com">
+          <IconButton color={footerTextColor} href="mailto:connorchev@gmail.com" target="_blank">
             <EmailIcon />
           </IconButton>
         </Grid>
