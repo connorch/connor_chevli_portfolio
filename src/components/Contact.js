@@ -4,11 +4,6 @@ import SendIcon from '@material-ui/icons/Send';
 
 const Contact = () => {
   const classes = useStyles();
-
-  const handleSubmit = e => {
-    debugger;
-  }
-
   return (
     <Box className={classes.container}>
       <Paper className={classes.paper}>

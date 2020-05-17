@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="124px" height="100px" viewBox="0 0 124 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Mountain</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="77.6472762%" id="linearGradient-1">
+            <stop stop-color="#687D87" offset="0%"></stop>
+            <stop stop-color="#37474F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Website-Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mountain">
+            <polygon fill="url(#linearGradient-1)" points="0 100 37 27.5 48 48.5 71 0 124 100"></polygon>
+            <polygon id="Snow2" fill="#D8D8D8" points="37 40.5 56 73 40 64.5"></polygon>
+            <polygon id="Snow3" fill="#D8D8D8" points="71 13.5 114.5 100 107.5 100 93.5 84 81.5 96.5"></polygon>
+        </g>
+    </g>
+</svg>
