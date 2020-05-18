@@ -32,11 +32,12 @@ const useStyles = makeStyles(theme => ({
   portraitContainer: {
     marginBottom: 20,
     [theme.breakpoints.up('sm')]: {
-      paddingTop: 60
+      paddingTop: 50
     }
   },
   portrait: {
     maxWidth: 400,
+    objectFit: 'contain',
     [theme.breakpoints.down('xs')]: {
       width: '100%'
     }

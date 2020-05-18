@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid } from '@material-ui/core';
+import { Box, Grid, Container, Typography } from '@material-ui/core';
 import mountainImage from '../../assets/mountain.svg';
-import landingText from '../../assets/landing_text.svg';
+import landingText from '../../assets/landing_text.png';
 import { blueGrey, red } from '@material-ui/core/colors';
 
 
@@ -10,18 +10,14 @@ const AboutSectionOne = () => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.sectionOne}>
-      <Grid item xs={12}>
-        <Box display="flex" justifyContent="center">
-          <img alt="landing_text" src={landingText} className={classes.landingText} />
-        </Box>
-      </Grid>
-      <Grid item xs={12}>
-        <Box display="flex" justifyContent="center" overflow="hidden" >
-          <img alt="landing_mountain" src={mountainImage} className={classes.mountainImage} />
-        </Box>
-      </Grid>
-    </Grid>
+    <Box className={classes.sectionOne}>
+      <Box display="flex" justifyContent="center" className={classes.textContainer}>
+        <img alt="landing_text" src={landingText} className={classes.landingText} />
+      </Box>
+      <Box display="flex" justifyContent="center">
+        <img alt="landing_mountain" src={mountainImage} className={classes.mountainImage} />
+      </Box>
+    </Box>
   );
 }
 
@@ -31,16 +27,16 @@ const useStyles = makeStyles(theme => ({
   sectionOne: {
     background: `radial-gradient(ellipse at top, ${blueGrey[100]}, transparent), radial-gradient(ellipse at bottom, ${red[300]}, transparent)`,
     paddingTop: 80,
-    width: '100%',
   },
   landingText: {
     width: 600,
-    maxWidth: '100%'
+    maxWidth: '90%',
+    objectFit: 'contain',
   },
   mountainImage: {
     marginTop: 50,
     width: 1000,
-    // height: 30,
-    maxWidth: '100%'
+    maxWidth: '100%',
+    alignSelf: 'flex-start'
   },
 }));
