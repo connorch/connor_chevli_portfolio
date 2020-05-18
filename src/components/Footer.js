@@ -15,7 +15,7 @@ const Footer = ({ dark = false }) => {
     <Grid container className={`${classes.footerContainer} ${dark ? classes.darkFooter : classes.lightFooter}`} justify="center">
       <Grid item>
         <Box className={classes.downloadResumeButton}>
-          <Button variant="contained" size="small" color={footerTextColor} disableElevation href={resumePDF} target="_blank">View My Resume</Button>
+          <Button variant="contained" size="large" color={footerTextColor} disableElevation href={resumePDF} target="_blank">View My Resume</Button>
         </Box>
       </Grid>
       <Grid item container justify="center">
