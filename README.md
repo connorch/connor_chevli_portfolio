@@ -1,3 +1,3 @@
 My Portfolio Website!
 
-connorchevli.dev
+https://www.connorchevli.dev/
