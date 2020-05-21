@@ -6,6 +6,7 @@ import Contact from './Contact';
 import Work from './Work/Work';
 import { blueGrey } from '@material-ui/core/colors';
 import { Route, Switch } from 'react-router-dom';
+import InteractiveHomepage from './Home/Home';
 
 const appTheme = createMuiTheme({
   palette: {
@@ -29,6 +30,9 @@ const appTheme = createMuiTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 700,
     fontWeightBold: 900,
+    h1: {
+
+    },
     h2: {
       fontWeight: 400,
       fontSize: "3.5rem"
@@ -44,11 +48,11 @@ const appTheme = createMuiTheme({
 const App = () => {
   return (
     <ThemeProvider theme={appTheme}>
-      <NavBar />
       <Switch>
         <Route path="/" component={About} exact />
         <Route path="/work" component={Work} />
         <Route path="/contact" component={Contact} />
+        <Route path="/home" component={InteractiveHomepage} />
       </Switch>
     </ThemeProvider>
   );

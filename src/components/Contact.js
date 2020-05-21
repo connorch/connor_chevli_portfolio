@@ -2,11 +2,13 @@ import React, { Fragment } from 'react';
 import { Grid, TextField, makeStyles, IconButton, Paper, Box, Typography } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import Footer from './Footer';
+import NavBar from './NavBar';
 
 const Contact = () => {
   const classes = useStyles();
   return (
     <Fragment>
+      <NavBar />
       <Box className={classes.container}>
         <Typography variant="h1" color="textPrimary" align="center" gutterBottom>Say hi!</Typography>
         <Paper className={classes.paper}>

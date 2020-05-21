@@ -5,6 +5,7 @@ import { green } from '@material-ui/core/colors';
 import WorkEntry from './WorkEntry';
 import WORK_ENTRY_TYPES from '../../constants/WorkEntryTypes';
 import Footer from '../Footer';
+import NavBar from '../NavBar';
 
 const Work = () => {
   const classes = useStyles();
@@ -12,6 +13,7 @@ const Work = () => {
 
   return (
     <Fragment>
+      <NavBar />
       <Box className={classes.workContainer}>
         <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
           Professional Experience
