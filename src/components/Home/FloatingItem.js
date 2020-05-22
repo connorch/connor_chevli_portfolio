@@ -2,6 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import { animated, useSpring } from 'react-spring';
 
+const X_AXIS_MAX_DEGREES_ROTATION = 20;
+const Y_AXIS_MAX_DEGREES_ROTATION = 20;
+
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 const FloatingItem = ({ children, className }) => {
@@ -14,32 +17,37 @@ const FloatingItem = ({ children, className }) => {
     }
   }));
 
+  const calculateRotation = ({ clientX, clientY, target }) => {
+    // Get element dimensions and position
+    const {
+      x: elemX,
+      y: elemY,
+      width: elemWidth,
+      height: elemHeight
+    } = target.getBoundingClientRect();
 
-  const getElementCenter = ({ x, y, width, height }) => {
-    return {
-      x: x + width / 2,
-      y: y + height / 2
-    }
+    // Get the percentage distance from the center.
+    const mouseDistanceFromElemCenter = {
+      x: (clientX - (elemX + elemWidth / 2)) / (elemWidth / 2),
+      y: (clientY - (elemY + elemHeight / 2)) / (elemHeight / 2)
+    };
+
+    // Set rotation
+    return set({
+      xys: [
+        -mouseDistanceFromElemCenter.y * X_AXIS_MAX_DEGREES_ROTATION,
+        mouseDistanceFromElemCenter.x * Y_AXIS_MAX_DEGREES_ROTATION,
+        1.1
+      ]
+    });
   }
-
-  // Calculate how to rotate element based on the mouse position relative to the element.
-  const calcRotation = (clientX, clientY, elemCenterCoords) => ([
-    -(clientY - elemCenterCoords.y) / 2,
-    (clientX - elemCenterCoords.x) / 30,
-    1.1
-  ]);
-
-  // When the mouse moves over element, set new rotation values for element.
-  const setRotation = ({ clientX, clientY, target }) => {
-    return set({ xys: calcRotation(clientX, clientY, getElementCenter(target.getBoundingClientRect())) });
-  };
 
   return (
     <animated.div
       className={className}
-      onMouseMove={setRotation}
+      onMouseMove={calculateRotation}
       onMouseLeave={() => set({ xys: [0, 0, 1] })}
-      style={{ transform: props.xys.interpolate(trans), width: '100%' }}
+      style={{ transform: props.xys.interpolate(trans) }}
     >
       {children}
     </animated.div >
