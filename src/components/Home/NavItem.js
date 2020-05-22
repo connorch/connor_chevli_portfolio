@@ -18,16 +18,15 @@ const NavItem = ({ children }) => {
 
 const useStyles = makeStyles(theme => ({
   menuItem: {
-    // width: '50%',
-    margin: '0 auto'
+    margin: '0 auto',
+    width: 'fit-content'
   },
   button: {
-    display: "block",
-    margin: '0 auto',
-    textAlign: 'center'
+    textAlign: 'center',
+    paddingLeft: 10,
+    paddingRight: 10
   },
   text: {
-    width: '100%',
     fontFamily: "Megrim",
     color: lightBlue[200],
     textShadow: "5px 0px 20px #000"
