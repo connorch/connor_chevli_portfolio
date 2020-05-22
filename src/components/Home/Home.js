@@ -9,18 +9,20 @@ import NavItem from './NavItem';
 const Home = () => {
   const classes = useStyles();
   return (
-    <Box className={classes.landing}>
-      <NavItem>About</NavItem>
-      <NavItem>Work</NavItem>
-      <NavItem>Contact</NavItem>
+    <>
+      <Box className={classes.landing}>
+        <NavItem>About</NavItem>
+        <NavItem>Work</NavItem>
+        <NavItem>Contact</NavItem>
+      </Box>
       <div style={{ width: '100%', height: '1000px' }}></div>
-    </Box>
+    </>
   )
 }
 
 const useStyles = makeStyles(theme => ({
   landing: {
-    width: '100vw',
+    width: '100%',
     height: '100vh',
     backgroundImage: `url(${LandingBackground})`,
     backgroundSize: 'cover',
