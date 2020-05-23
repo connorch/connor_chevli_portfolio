@@ -6,7 +6,7 @@ const Y_AXIS_MAX_DEGREES_ROTATION = 20;
 
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-const FloatingItem = ({ children, className, color }) => {
+const FloatingItem = ({ children, className, color, component = 'div' }) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: {

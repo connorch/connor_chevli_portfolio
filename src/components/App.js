@@ -24,7 +24,7 @@ const appTheme = createMuiTheme({
     darkBlueGrey: blueGrey[800],
   },
   typography: {
-    fontFamily: '"Lato", sans-serif',
+    fontFamily: '"Raleway", sans-serif',
     fontWeightThin: 100,
     fontWeightLight: 300,
     fontWeightRegular: 400,
@@ -32,12 +32,15 @@ const appTheme = createMuiTheme({
     fontWeightBold: 900,
     h1: {
       fontFamily: "Megrim",
-      color: lightBlue[200]
+      lineHeight: 1
     },
     h2: {
       fontFamily: "Megrim",
       fontSize: "3.5rem",
-      // color: lightBlue[200]
+    },
+    h3: {
+      fontFamily: '"Raleway", sans-serif',
+      fontSize: "3rem",
     },
     h6: {
       fontSize: '1rem',
