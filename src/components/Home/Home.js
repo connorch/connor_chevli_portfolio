@@ -1,9 +1,7 @@
 import React from 'react'
 import { lightBlue } from '@material-ui/core/colors'
-import FloatingItem from './FloatingItem';
-import LandingBackground from '../../assets/laptop_table_background_3.jpg';
-import { ButtonBase, Box, makeStyles, Typography } from '@material-ui/core';
-import NavItem from './NavItem';
+import LandingBackground from '../../assets/landing_background_2.jpg';
+import { Box, makeStyles, Typography } from '@material-ui/core';
 
 
 const Home = () => {
@@ -11,9 +9,7 @@ const Home = () => {
   return (
     <>
       <Box className={classes.landing}>
-        <NavItem>About</NavItem>
-        <NavItem>Work</NavItem>
-        <NavItem>Contact</NavItem>
+        <Typography variant="h1" align="center">I'm Connor.</Typography>
       </Box>
       <div style={{ width: '100%', height: '1000px' }}></div>
     </>
@@ -24,6 +20,7 @@ const useStyles = makeStyles(theme => ({
   landing: {
     width: '100%',
     height: '100vh',
+    backgroundColor: "#CCC",
     backgroundImage: `url(${LandingBackground})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -31,7 +28,6 @@ const useStyles = makeStyles(theme => ({
       // backgroundAttachment: 'fixed'
     }
   },
-
 }));
 
 export default Home;

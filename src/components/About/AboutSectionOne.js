@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Container, Typography } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import mountainImage from '../../assets/mountain.svg';
 import landingText from '../../assets/landing_text.png';
 import { blueGrey, red } from '@material-ui/core/colors';

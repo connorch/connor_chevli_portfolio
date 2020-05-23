@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Typography, Divider } from '@material-ui/core';
-import { green } from '@material-ui/core/colors';
+import { Box, Typography } from '@material-ui/core';
 import WorkEntry from './WorkEntry';
 import WORK_ENTRY_TYPES from '../../constants/WorkEntryTypes';
 import Footer from '../Footer';

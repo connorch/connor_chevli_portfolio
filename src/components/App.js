@@ -1,12 +1,12 @@
 import React from 'react';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import NavBar from './NavBar';
 import About from './About/About';
 import Contact from './Contact';
 import Work from './Work/Work';
-import { blueGrey } from '@material-ui/core/colors';
+import { blueGrey, lightBlue } from '@material-ui/core/colors';
 import { Route, Switch } from 'react-router-dom';
 import InteractiveHomepage from './Home/Home';
+import NavigationMenu from './Nav/NavigationMenu';
 
 const appTheme = createMuiTheme({
   palette: {
@@ -31,11 +31,13 @@ const appTheme = createMuiTheme({
     fontWeightMedium: 700,
     fontWeightBold: 900,
     h1: {
-
+      fontFamily: "Megrim",
+      color: lightBlue[200]
     },
     h2: {
-      fontWeight: 400,
-      fontSize: "3.5rem"
+      fontFamily: "Megrim",
+      fontSize: "3.5rem",
+      // color: lightBlue[200]
     },
     h6: {
       fontSize: '1rem',
@@ -48,6 +50,8 @@ const appTheme = createMuiTheme({
 const App = () => {
   return (
     <ThemeProvider theme={appTheme}>
+      <NavigationMenu />
+
       <Switch>
         <Route path="/" component={About} exact />
         <Route path="/work" component={Work} />

@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
 import { animated, useSpring } from 'react-spring';
 
 const X_AXIS_MAX_DEGREES_ROTATION = 20;
@@ -7,7 +6,7 @@ const Y_AXIS_MAX_DEGREES_ROTATION = 20;
 
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-const FloatingItem = ({ children, className }) => {
+const FloatingItem = ({ children, className, color }) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: {
@@ -47,7 +46,7 @@ const FloatingItem = ({ children, className }) => {
       className={className}
       onMouseMove={calculateRotation}
       onMouseLeave={() => set({ xys: [0, 0, 1] })}
-      style={{ transform: props.xys.interpolate(trans) }}
+      style={{ transform: props.xys.interpolate(trans), color }}
     >
       {children}
     </animated.div >
