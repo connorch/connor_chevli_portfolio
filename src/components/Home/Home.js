@@ -13,7 +13,7 @@ const Home = () => {
       <Box className={classes.landing}>
         <Typography variant="h1" gutterBottom className={classes.primaryText}>I'm Connor.</Typography>
         <Typography variant="h3" className={classes.secondaryText}>
-          I love building <br />
+          A full-stack engineer building <br />
           <span style={{ fontWeight: 800 }}>immersive</span> and <span style={{ fontStyle: 'italic' }}>beautiful</span> <br />
           webapps
         </Typography>

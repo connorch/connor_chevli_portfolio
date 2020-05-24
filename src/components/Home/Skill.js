@@ -5,12 +5,12 @@ import { useSpring, animated, config } from 'react-spring';
 import FloatingItem from '../UtilityComponents/FloatingItem';
 
 
-const Skill = ({ children }) => {
+const Skill = ({ children, isSkillTypeSelected }) => {
   const classes = useStyles();
   const [isHovered, setIsHovered] = useState(false)
 
   const { color } = useSpring({
-    color: isHovered ? red["A200"] : lightBlue[200],
+    color: isHovered || isSkillTypeSelected ? red["A200"] : lightBlue[200],
     config: config.stiff
   });
 
@@ -20,7 +20,7 @@ const Skill = ({ children }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <FloatingItem className={classes.floatingItem} color={color}>
-        <Typography variant="h3">
+        <Typography variant="h3" className={classes.text}>
           {children}
         </Typography>
       </FloatingItem>
@@ -30,10 +30,11 @@ const Skill = ({ children }) => {
 
 const useStyles = makeStyles(theme => ({
   floatingItem: {
-    paddingLeft: 10,
-    paddingRight: 10
+    paddingLeft: 15,
+    paddingRight: 15
   },
-  skill: {
+  text: {
+    fontSize: 60
   }
 }));
 
