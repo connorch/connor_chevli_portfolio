@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles, Typography, ButtonGroup, Button, Grid } from '@material-ui/core';
+import { makeStyles, Typography, ButtonGroup, Button, Grid, useMediaQuery, useTheme } from '@material-ui/core';
 import { grey, green, blue, yellow, purple, red } from '@material-ui/core/colors';
 import Skill from './Skill';
 
@@ -34,6 +34,8 @@ const SkillTypes = {
 const Skills = () => {
   const classes = useStyles();
 
+  const isSmallDevice = useMediaQuery(useTheme().breakpoints.down('sm'));
+
   const [selectedSkillTypes, setSelectedSkillTypes] = useState(SkillTypes);
 
   const toggleSkillType = skillType => {
@@ -59,7 +61,7 @@ const Skills = () => {
   return (
     <div className={classes.background}>
       <div className={classes.buttonGroup}>
-        <ButtonGroup size="large">
+        <ButtonGroup size="large" orientation={isSmallDevice ? 'vertical' : 'horizontal'}>
           <Button variant={getButtonVariant(selectedSkillTypes.language)} onClick={() => toggleSkillType(SkillTypes.language)}>Languages</Button>
           <Button variant={getButtonVariant(selectedSkillTypes.framework)} onClick={() => toggleSkillType(SkillTypes.framework)}>Frameworks</Button>
           <Button variant={getButtonVariant(selectedSkillTypes.library)} onClick={() => toggleSkillType(SkillTypes.library)}>Libraries</Button>
@@ -78,8 +80,6 @@ const Skills = () => {
 
 const useStyles = makeStyles(theme => ({
   background: {
-    backgroundColor: grey[900],
-    padding: 30
   },
   buttonGroup: {
     display: "flex",
