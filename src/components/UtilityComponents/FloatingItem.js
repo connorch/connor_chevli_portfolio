@@ -9,6 +9,8 @@ const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)
 const FloatingItem = ({ children, className, color, component = 'div' }) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
+    position: 'static',
+    zIndex: 'auto',
     config: {
       mass: 10,
       tension: 500,
@@ -37,7 +39,9 @@ const FloatingItem = ({ children, className, color, component = 'div' }) => {
         -mouseDistanceFromElemCenter.y * X_AXIS_MAX_DEGREES_ROTATION,
         mouseDistanceFromElemCenter.x * Y_AXIS_MAX_DEGREES_ROTATION,
         1.1
-      ]
+      ],
+      position: 'relative',
+      zIndex: 1
     });
   }
 
@@ -45,8 +49,12 @@ const FloatingItem = ({ children, className, color, component = 'div' }) => {
     <animated.div
       className={className}
       onMouseMove={calculateRotation}
-      onMouseLeave={() => set({ xys: [0, 0, 1] })}
-      style={{ transform: props.xys.interpolate(trans), color }}
+      onMouseLeave={() => set({ xys: [0, 0, 1], position: 'static' })}
+      style={{
+        transform: props.xys.interpolate(trans),
+        color, position: props.position,
+        zIndex: props.zIndex
+      }}
     >
       {children}
     </animated.div >

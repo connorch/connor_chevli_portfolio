@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     fontFamily: "Megrim",
-    textShadow: "5px 0px 20px #000",
+    textShadow: "10px 10px 10px #000",
   }
 }))
 

@@ -39,7 +39,7 @@ const NavigationMenu = () => {
     <Grid container direction="column" alignItems="flex-end" className={classes.navMenu}>
       <Grid item><IconButton onClick={toggleMenu}><MenuIcon isOpen={isOpen} /></IconButton></Grid>
       {NAV_ITEMS_DATA.map(({ text, id, href }) => (
-        <Collapse in={isOpen} key={id}>
+        <Collapse in={isOpen} disableStrictModeCompat key={id}>
           <Grid item>
             <NavItem
               selectNavItem={selectNavItem}
@@ -61,8 +61,10 @@ const useStyles = makeStyles(theme => ({
     position: "fixed",
     padding: 10,
     overflow: "hidden",
-    width: 250,
-    right: 0
+    width: "fit-content",
+    maxWidth: 300,
+    right: 0,
+    zIndex: 1
   },
 }))
 
