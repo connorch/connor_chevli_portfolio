@@ -33,7 +33,8 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     display: 'flex',
-    alignItems: 'space-between'
+    alignItems: 'space-between',
+    overflow: 'hidden'
   },
   primaryText: {
     paddingLeft: 15,

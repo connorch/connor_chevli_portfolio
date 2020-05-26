@@ -1,77 +1,30 @@
 import React, { useState } from 'react';
-import { makeStyles, Typography, ButtonGroup, Button, Grid, useMediaQuery, useTheme } from '@material-ui/core';
-import { grey, green, blue, yellow, purple, red } from '@material-ui/core/colors';
+import { makeStyles, ButtonGroup, Button, useMediaQuery, useTheme } from '@material-ui/core';
+import { lightBlue } from '@material-ui/core/colors';
 import Skill from './Skill';
-
-const SkillTypes = {
-  'language': {
-    id: 'language',
-    isSelected: false,
-    selectedColor: red['A200']
-  },
-  'framework': {
-    id: 'framework',
-    isSelected: false,
-    selectedColor: yellow[300]
-  },
-  'library': {
-    id: 'library',
-    isSelected: false,
-    selectedColor: purple[300]
-  },
-  'frontend': {
-    id: 'frontend',
-    isSelected: false,
-    selectedColor: green[300]
-  },
-  'backend': {
-    id: 'backend',
-    isSelected: false,
-    selectedColor: blue[300]
-  },
-}
 
 const Skills = () => {
   const classes = useStyles();
 
-  const isSmallDevice = useMediaQuery(useTheme().breakpoints.down('sm'));
+  const [selectedSkillType, setSelectedSkillType] = useState({});
 
-  const [selectedSkillTypes, setSelectedSkillTypes] = useState(SkillTypes);
+  const getButtonVariant = id => id === selectedSkillType.id ? 'contained' : 'outlined';
 
-  const toggleSkillType = skillType => {
-    setSelectedSkillTypes({
-      ...selectedSkillTypes,
-      [skillType.id]: {
-        ...skillType,
-        isSelected: !selectedSkillTypes[skillType.id].isSelected
-      }
-    });
-  }
+  const filterSkills = skillType => setSelectedSkillType(selectedSkillType.id === skillType.id ? {} : skillType);
 
-  const isSkillTypeSelected = ({ types }) => {
-    let type;
-    for (type of types) {
-      if (selectedSkillTypes[type].isSelected) { return true; }
-    }
-    return false;
-  };
-
-  const getButtonVariant = ({ isSelected }) => isSelected ? 'contained' : 'outlined';
+  const shouldHighlightSkill = types => Object.keys(selectedSkillType).length > 0 ? types[selectedSkillType.id] : true;
 
   return (
     <div className={classes.background}>
       <div className={classes.buttonGroup}>
-        <ButtonGroup size="large" orientation={isSmallDevice ? 'vertical' : 'horizontal'}>
-          <Button variant={getButtonVariant(selectedSkillTypes.language)} onClick={() => toggleSkillType(SkillTypes.language)}>Languages</Button>
-          <Button variant={getButtonVariant(selectedSkillTypes.framework)} onClick={() => toggleSkillType(SkillTypes.framework)}>Frameworks</Button>
-          <Button variant={getButtonVariant(selectedSkillTypes.library)} onClick={() => toggleSkillType(SkillTypes.library)}>Libraries</Button>
-          <Button variant={getButtonVariant(selectedSkillTypes.frontend)} onClick={() => toggleSkillType(SkillTypes.frontend)}>Frontend</Button>
-          <Button variant={getButtonVariant(selectedSkillTypes.backend)} onClick={() => toggleSkillType(SkillTypes.backend)}>Backend</Button>
+        <ButtonGroup size="large">
+          <Button variant={getButtonVariant(SkillTypes.frontend.id)} onClick={() => filterSkills(SkillTypes.frontend)}>Frontend</Button>
+          <Button variant={getButtonVariant(SkillTypes.backend.id)} onClick={() => filterSkills(SkillTypes.backend)}>Backend</Button>
         </ButtonGroup>
       </div>
       <div className={classes.skills}>
         {skills.map(skill => (
-          <Skill key={skill.name} isSkillTypeSelected={isSkillTypeSelected(skill)}>{skill.name}</Skill>
+          <Skill key={skill.name} shouldHighlight={shouldHighlightSkill(skill.types)}>{skill.name}</Skill>
         ))}
       </div>
     </div>
@@ -86,6 +39,11 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     marginBottom: 30
   },
+  buttonGroupSeparator: {
+    paddingLeft: 10,
+    paddingRight: 10,
+    color: lightBlue[200]
+  },
   skills: {
     margin: '0 auto',
     display: 'flex',
@@ -98,111 +56,124 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default Skills;
+const SkillTypes = {
+  frontend: {
+    id: 'frontend',
+    group: 'stack',
+  },
+  backend: {
+    id: 'backend',
+    group: 'stack',
+  },
+}
+
+const { frontend, backend } = SkillTypes;
 
 const skills = [
   {
     name: "JavaScript (ES8)",
-    types: ["language", "frontend", "backend"]
+    types: { frontend, backend }
   },
   {
     name: "React",
-    types: ["framework", "frontend"]
+    types: { frontend }
   },
   {
     name: "Redux",
-    types: ["library", "frontend"]
+    types: { frontend }
   },
   {
     name: "NodeJS",
-    types: ["framework", "backend"]
+    types: { backend }
   },
   {
     name: "Dart",
-    types: ["language", "frontend"]
+    types: { frontend }
   },
   {
     name: "Flutter",
-    types: ["framework", "frontend"]
+    types: { frontend }
   },
   {
     name: "ExpressJS",
-    types: ["framework", "backend"]
+    types: { backend }
   },
   {
     name: "GraphQL",
-    types: ["language", "library"]
+    types: { frontend, backend }
   },
   {
     name: "D3",
-    types: ["library", "frontend"]
+    types: { frontend }
   },
   {
     name: "Gulp",
-    types: ["library", "backend"]
+    types: { backend }
   },
   {
     name: "Vue.js",
-    types: ["framework", "frontend"]
+    types: { frontend }
   },
   {
     name: "AWS ECS",
-    types: []
+    types: {}
   },
   {
     name: "AngularJS",
-    types: ["framework", "frontend"]
+    types: { frontend }
   },
   {
     name: "Perl",
-    types: ["language", "backend"]
+    types: { backend }
   },
   {
     name: "Koa",
-    types: ["framework", "backend"]
+    types: { backend }
   },
   {
     name: "HTML5",
-    types: ["language", "frontend"]
+    types: { frontend }
   },
   {
     name: "CSS",
-    types: ["language", "frontend"]
+    types: { frontend }
   },
   {
     name: "Redis",
-    types: ["library", "backend"]
+    types: { backend }
   },
   {
     name: "PHP",
-    types: ["language", "backend"]
+    types: { backend }
   },
   {
     name: "Webpack",
-    types: ["library", "backend"]
+    types: { backend }
   },
   {
     name: "SASS",
-    types: ["framework", "frontend"]
+    types: { frontend }
   },
   {
     name: "SQL",
-    types: ["language", "backend"]
+    types: { backend }
   },
   {
     name: "jQuery",
-    types: ["library", "frontend"]
+    types: { frontend }
   },
   {
     name: "MongoDB",
-    types: ["backend"]
+    types: { backend }
   },
   {
     name: "Memcached",
-    types: ["backend"]
+    types: { backend }
   },
   {
     name: "React-Native",
-    types: ["framework", "frontend"]
+    types: { frontend }
   },
 ];
+
+export default Skills;

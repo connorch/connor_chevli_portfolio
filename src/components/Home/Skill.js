@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
 import { grey, red, lightBlue } from '@material-ui/core/colors';
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, config } from 'react-spring';
 import FloatingItem from '../UtilityComponents/FloatingItem';
 
 
-const Skill = ({ children, isSkillTypeSelected }) => {
+const Skill = ({ children, shouldHighlight }) => {
   const classes = useStyles();
   const [isHovered, setIsHovered] = useState(false)
 
   const { color } = useSpring({
-    color: isHovered || isSkillTypeSelected ? red["A200"] : lightBlue[200],
+    color: isHovered ? red['A200'] : shouldHighlight ? lightBlue[200] : grey[900],
     config: config.stiff
   });
 
