@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     mixBlendMode: 'difference',
-    color: theme.palette.text.primary,
+    color: theme.palette.secondary.main,
   },
   skills: {
     margin: '0 auto',
