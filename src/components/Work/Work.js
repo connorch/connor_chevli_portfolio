@@ -16,7 +16,7 @@ const Work = () => {
       <Box className={classes.workContainer}>
         <Typography variant="h2" align="center" color="secondary" gutterBottom>
           Professional Experience
-      </Typography>
+        </Typography>
         {
           experience.professional.map((company) => (
             <WorkEntry workData={company} entryType={WORK_ENTRY_TYPES.professional} />

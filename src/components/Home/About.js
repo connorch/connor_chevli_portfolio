@@ -32,12 +32,12 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     maxWidth: 500,
     [theme.breakpoints.down('xs')]: {
-      maxWidth: 300
+      maxWidth: 250
     },
     padding: 30,
   },
   text: {
-    color: theme.palette.text.primary,
+    color: theme.palette.text.secondary,
     width: '100%',
     textAlign: 'center',
     maxWidth: 500,

@@ -24,7 +24,7 @@ const MenuIcon = ({ isOpen }) => {
   const theme = useTheme();
 
   return (
-    <animated.svg width="40" height="40" viewBox="0 0 44 44" fill={theme.palette.text.primary}>
+    <animated.svg width="40" height="40" viewBox="0 0 44 44" fill={theme.palette.secondary.main}>
       <animated.rect width="40" height="4" transform={top} />
       <animated.rect width="40" height="4" transform={center} />
       <animated.rect width="40" height="4" transform={bottom} />
