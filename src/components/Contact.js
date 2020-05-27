@@ -1,16 +1,33 @@
 import React, { Fragment } from 'react';
-import { Grid, TextField, makeStyles, IconButton, Paper, Box, Typography } from '@material-ui/core';
+import { Grid, TextField, makeStyles, IconButton, Paper, Box, Typography, withStyles } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
-import Footer from './Footer';
-import NavBar from './NavBar';
+
+const CssTextField = withStyles({
+  root: {
+    '& label.Mui-focused': {
+      color: '#81d4fa',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#fafafa',
+      },
+      '&:hover fieldset': {
+        borderColor: '#81d4fa',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#81d4fa',
+      },
+    },
+  },
+})(TextField);
 
 const Contact = () => {
   const classes = useStyles();
+
   return (
     <Fragment>
-      <NavBar />
       <Box className={classes.container}>
-        <Typography variant="h1" color="textPrimary" align="center" gutterBottom>Say hi!</Typography>
+        <Typography variant="h2" color="secondary" align="center" gutterBottom>Let's connect.</Typography>
         <Paper className={classes.paper}>
           <form name="contact" method="post">
             <input type="hidden" name="form-name" value="contact" />
@@ -22,33 +39,39 @@ const Contact = () => {
             >
               <Grid item xs={12}
               >
-                <TextField
+                <CssTextField
                   variant="outlined"
-                  color="secondary"
+                  color="textPrimary"
                   label="Name"
                   id="name"
                   name="name"
                   type="text"
+                  inputProps={{
+                    className: classes.input,
+                    classes: { focused: classes.CsstextFieldFocused }
+                  }}
                   className={classes.formField}
                 />
               </Grid>
               <Grid item xs={12}
               >
-                <TextField
+                <CssTextField
                   variant="outlined"
-                  color="secondary"
+                  color="textPrimary"
                   label="Email"
                   id="email"
                   name="email"
                   type="email"
+                  inputProps={{
+                    className: classes.input
+                  }}
                   className={classes.formField}
-                  autofocus
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <CssTextField
                   variant="outlined"
-                  color="secondary"
+                  color="textPrimary"
                   label="Message"
                   id="message"
                   name="message"
@@ -56,14 +79,18 @@ const Contact = () => {
                   multiline
                   rows={6}
                   rowsMax={16}
+                  inputProps={{
+                    className: classes.input
+                  }}
                   className={classes.formField}
                 />
               </Grid>
               <Grid item xs={12}>
                 <IconButton
                   aria-label="send"
-                  className={classes.sendButton}
                   type="submit"
+                  color="secondary"
+                  className={classes.sendButton}
                 >
                   <SendIcon />
                 </IconButton>
@@ -72,7 +99,6 @@ const Contact = () => {
           </form>
         </Paper>
       </Box>
-      <Footer />
     </Fragment>
   );
 }
@@ -80,19 +106,25 @@ const Contact = () => {
 const useStyles = makeStyles(theme => ({
   container: {
     backgroundColor: theme.palette.primary.main,
-    paddingTop: 100,
-    paddingBottom: 100
+    paddingBottom: 50
   },
   paper: {
     maxWidth: 500,
+    backgroundColor: theme.palette.grey[800],
     margin: '0 auto',
     padding: 20
   },
   formField: {
-    width: '100%'
+    width: '100%',
+  },
+  textFieldFocused: {
+    borderColor: theme.palette.grey[50]
+  },
+  input: {
+    color: theme.palette.grey[50]
   },
   sendButton: {
-    float: 'right'
+    float: 'right',
   }
 }));
 
