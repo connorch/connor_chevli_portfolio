@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles, Typography } from '@material-ui/core';
+import { makeStyles, Typography, useTheme } from '@material-ui/core';
 import { grey, red, lightBlue } from '@material-ui/core/colors';
 import { useSpring, config } from 'react-spring';
 import FloatingItem from '../UtilityComponents/FloatingItem';
@@ -7,10 +7,11 @@ import FloatingItem from '../UtilityComponents/FloatingItem';
 
 const Skill = ({ children, shouldHighlight }) => {
   const classes = useStyles();
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
+  const theme = useTheme();
 
   const { color } = useSpring({
-    color: isHovered ? red['A200'] : shouldHighlight ? lightBlue[200] : grey[900],
+    color: isHovered ? theme.palette.secondary.main : shouldHighlight ? theme.palette.primary.main : grey[900],
     config: config.stiff
   });
 
@@ -31,10 +32,15 @@ const Skill = ({ children, shouldHighlight }) => {
 const useStyles = makeStyles(theme => ({
   floatingItem: {
     paddingLeft: 15,
-    paddingRight: 15
+    paddingRight: 15,
+    mixBlendMode: 'difference'
   },
   text: {
-    fontSize: 60
+    fontSize: 60,
+    // fontWeight: 200,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 30
+    }
   }
 }));
 

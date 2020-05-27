@@ -1,6 +1,7 @@
 import React from 'react';
 import { animated, useSpring, config } from 'react-spring'
 import { lightBlue } from '@material-ui/core/colors';
+import { useTheme } from '@material-ui/core';
 
 const openedTransformation = {
   top: 'translate(2 , 9) rotate(0)',
@@ -20,8 +21,10 @@ const MenuIcon = ({ isOpen }) => {
     config: config.stiff,
   })
 
+  const theme = useTheme();
+
   return (
-    <animated.svg width="40" height="40" viewBox="0 0 44 44" fill={lightBlue[200]}>
+    <animated.svg width="40" height="40" viewBox="0 0 44 44" fill={theme.palette.primary.main}>
       <animated.rect width="40" height="4" transform={top} />
       <animated.rect width="40" height="4" transform={center} />
       <animated.rect width="40" height="4" transform={bottom} />

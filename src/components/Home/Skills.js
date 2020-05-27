@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles, ButtonGroup, Button, useMediaQuery, useTheme } from '@material-ui/core';
 import { lightBlue } from '@material-ui/core/colors';
 import Skill from './Skill';
+import PortraitImage from '../../assets/portrait_image_filtered.png';
 
 const Skills = () => {
   const classes = useStyles();
@@ -15,14 +16,14 @@ const Skills = () => {
   const shouldHighlightSkill = types => Object.keys(selectedSkillType).length > 0 ? types[selectedSkillType.id] : true;
 
   return (
-    <div className={classes.background}>
+    <div >
       <div className={classes.buttonGroup}>
-        <ButtonGroup size="large">
-          <Button variant={getButtonVariant(SkillTypes.frontend.id)} onClick={() => filterSkills(SkillTypes.frontend)}>Frontend</Button>
-          <Button variant={getButtonVariant(SkillTypes.backend.id)} onClick={() => filterSkills(SkillTypes.backend)}>Backend</Button>
+        <ButtonGroup size="large" >
+          <Button className={classes.button} variant={getButtonVariant(SkillTypes.frontend.id)} onClick={() => filterSkills(SkillTypes.frontend)}>Frontend</Button>
+          <Button className={classes.button} variant={getButtonVariant(SkillTypes.backend.id)} onClick={() => filterSkills(SkillTypes.backend)}>Backend</Button>
         </ButtonGroup>
       </div>
-      <div className={classes.skills}>
+      <div className={classes.skills} >
         {skills.map(skill => (
           <Skill key={skill.name} shouldHighlight={shouldHighlightSkill(skill.types)}>{skill.name}</Skill>
         ))}
@@ -32,17 +33,14 @@ const Skills = () => {
 };
 
 const useStyles = makeStyles(theme => ({
-  background: {
-  },
   buttonGroup: {
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: 30
-  },
-  buttonGroupSeparator: {
+    marginTop: 20,
+    marginBottom: 20,
     paddingLeft: 10,
-    paddingRight: 10,
-    color: lightBlue[200]
+  },
+  button: {
+    mixBlendMode: 'difference',
+    color: theme.palette.primary.main,
   },
   skills: {
     margin: '0 auto',
@@ -50,9 +48,9 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     cursor: 'default',
-  },
-  skillsText: {
-    textAlign: "justify"
+    backgroundSize: 'contain',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
   }
 }));
 
@@ -77,6 +75,10 @@ const skills = [
   {
     name: "React",
     types: { frontend }
+  },
+  {
+    name: "PHP",
+    types: { backend }
   },
   {
     name: "Redux",
@@ -143,12 +145,8 @@ const skills = [
     types: { backend }
   },
   {
-    name: "PHP",
-    types: { backend }
-  },
-  {
     name: "Webpack",
-    types: { backend }
+    types: { frontend }
   },
   {
     name: "SASS",
