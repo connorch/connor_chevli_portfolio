@@ -39,11 +39,11 @@ const WorkEntry = ({ workData, entryType }) => {
               </Grid>
               {(startDate && endDate) &&
                 <Grid item>
-                  <Typography variant="h6" color="textPrimary">{startDate} - {endDate}</Typography>
+                  <Typography variant="h6" color="textSecondary">{startDate} - {endDate}</Typography>
                 </Grid>
               }
               <Grid item>
-                <Typography variant="h6" color="textPrimary" gutterBottom>
+                <Typography variant="h6" color="textSecondary" gutterBottom>
                   {title && `${title} on the `}
                   {description}
                 </Typography>
@@ -51,7 +51,7 @@ const WorkEntry = ({ workData, entryType }) => {
               <Grid item container spacing={1}>
                 {bullets.map(bullet => (
                   <Grid item>
-                    <Typography variant="body1" color="secondary"><BulletPoint className={classes.bulletPoint} />{bullet}</Typography>
+                    <Typography variant="body1" color="textSecondary"><BulletPoint className={classes.bulletPoint} />{bullet}</Typography>
                   </Grid>
                 ))}
               </Grid>
@@ -71,7 +71,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1000,
   },
   divider: {
-    marginTop: 30
+    marginTop: 30,
+    backgroundColor: theme.palette.grey[800]
   },
   // Acornpack: {
   //   backgroundColor: deepOrange[100]

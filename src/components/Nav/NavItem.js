@@ -1,13 +1,14 @@
 import React from 'react';
-import { makeStyles, ButtonBase, Typography } from '@material-ui/core';
+import { makeStyles, ButtonBase, Typography, useTheme } from '@material-ui/core';
 import FloatingItem from '../UtilityComponents/FloatingItem';
 import { lightBlue, red } from '@material-ui/core/colors';
 import { useSpring } from 'react-spring';
 
 const NavItem = ({ children, id, isSelected, selectNavItem, href }) => {
   const classes = useStyles();
+  const theme = useTheme();
 
-  const { color } = useSpring({ color: isSelected ? red["A200"] : lightBlue[200] });
+  const { color } = useSpring({ color: isSelected ? theme.palette.secondary.main : theme.palette.text.primary });
 
   return (
     <>

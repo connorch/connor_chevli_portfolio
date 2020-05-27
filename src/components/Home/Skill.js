@@ -11,7 +11,7 @@ const Skill = ({ children, shouldHighlight }) => {
   const theme = useTheme();
 
   const { color } = useSpring({
-    color: isHovered ? theme.palette.secondary.main : shouldHighlight ? theme.palette.primary.main : grey[900],
+    color: isHovered ? theme.palette.secondary.main : shouldHighlight ? grey[50] : grey[900],
     config: config.stiff
   });
 
@@ -37,7 +37,6 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     fontSize: 60,
-    // fontWeight: 200,
     [theme.breakpoints.down('sm')]: {
       fontSize: 30
     }

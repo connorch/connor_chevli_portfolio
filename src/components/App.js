@@ -1,20 +1,20 @@
 import React from 'react';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { blueGrey, lightBlue, red } from '@material-ui/core/colors';
+import { blueGrey, lightBlue, red, grey } from '@material-ui/core/colors';
 import { Route, Switch } from 'react-router-dom';
 import InteractiveHomepage from './Home/Home';
 
 const appTheme = createMuiTheme({
   palette: {
     primary: {
-      main: lightBlue[200]
+      main: grey[900]
     },
     secondary: {
       main: red['A200']
     },
     text: {
-      primary: blueGrey[800],
-      secondary: blueGrey[100],
+      primary: lightBlue[200],
+      secondary: grey[50],
     },
     lightBlueGrey: blueGrey[100],
     darkBlueGrey: blueGrey[800],

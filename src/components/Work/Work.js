@@ -5,6 +5,7 @@ import WorkEntry from './WorkEntry';
 import WORK_ENTRY_TYPES from '../../constants/WorkEntryTypes';
 import Footer from '../Footer';
 import NavBar from '../NavBar';
+import { lightBlue } from '@material-ui/core/colors';
 
 const Work = () => {
   const classes = useStyles();
@@ -12,9 +13,8 @@ const Work = () => {
 
   return (
     <Fragment>
-      <NavBar />
       <Box className={classes.workContainer}>
-        <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+        <Typography variant="h2" align="center" color="secondary" gutterBottom>
           Professional Experience
       </Typography>
         {
@@ -22,7 +22,7 @@ const Work = () => {
             <WorkEntry workData={company} entryType={WORK_ENTRY_TYPES.professional} />
           ))
         }
-        <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+        <Typography variant="h2" align="center" color="secondary" gutterBottom>
           Projects
       </Typography>
         {
@@ -38,7 +38,7 @@ const Work = () => {
 const useStyles = makeStyles(theme => ({
   workContainer: {
     paddingTop: 100,
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.grey[900]
   },
 }));
 

@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   about: {
     width: '100%',
     minHeight: 800,
-    backgroundColor: grey[900],
+    backgroundColor: theme.palette.grey[900],
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     padding: 30,
   },
   text: {
-    color: theme.palette.primary.main,
+    color: theme.palette.text.primary,
     width: '100%',
     textAlign: 'center',
     maxWidth: 500,

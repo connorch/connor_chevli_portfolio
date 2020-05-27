@@ -5,6 +5,7 @@ import { Box, makeStyles, Typography, Grid } from '@material-ui/core';
 import About from './About';
 import Skills from './Skills';
 import NavigationMenu from '../Nav/NavigationMenu';
+import Work from '../Work/Work';
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
         </Grid>
       </Grid>
       <About />
+      <Work />
     </>
   )
 }
@@ -42,7 +44,7 @@ const useStyles = makeStyles(theme => ({
   primaryText: {
     paddingLeft: 15,
     paddingTop: 15,
-    color: theme.palette.primary.light,
+    color: theme.palette.text.primary,
     [theme.breakpoints.down('sm')]: {
       fontSize: '3.5rem'
     },
@@ -50,7 +52,7 @@ const useStyles = makeStyles(theme => ({
   },
   secondaryText: {
     paddingLeft: 15,
-    color: theme.palette.primary.light,
+    color: theme.palette.text.primary,
     [theme.breakpoints.down('sm')]: {
       fontSize: '1.5rem'
     }
