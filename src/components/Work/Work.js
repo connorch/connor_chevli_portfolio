@@ -31,7 +31,6 @@ const Work = () => {
           ))
         }
       </Box>
-      <Footer />
     </Fragment>
   );
 }
