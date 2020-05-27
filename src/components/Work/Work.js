@@ -9,13 +9,12 @@ import { lightBlue } from '@material-ui/core/colors';
 
 const Work = () => {
   const classes = useStyles();
-  console.log(experience.professional[0].startDate);
 
   return (
     <Fragment>
       <Box className={classes.workContainer}>
         <Typography variant="h2" align="center" color="secondary" gutterBottom>
-          Professional Experience
+          Work Experience
         </Typography>
         {
           experience.professional.map((company) => (
@@ -36,7 +35,7 @@ const Work = () => {
 }
 const useStyles = makeStyles(theme => ({
   workContainer: {
-    paddingTop: 100,
+    paddingTop: 50,
     backgroundColor: theme.palette.grey[900]
   },
 }));

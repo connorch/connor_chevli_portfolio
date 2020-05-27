@@ -20,13 +20,10 @@ const About = () => {
 
 const useStyles = makeStyles(theme => ({
   about: {
-    width: '100%',
-    minHeight: 800,
     backgroundColor: theme.palette.grey[900],
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
   },
   img: {
     width: '100%',
@@ -38,12 +35,12 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     color: theme.palette.text.secondary,
-    width: '100%',
     textAlign: 'center',
     maxWidth: 500,
-    minWidth: 300,
+    minWidth: 200,
     [theme.breakpoints.down('xs')]: {
-      maxWidth: 300
+      maxWidth: 300,
+      fontSize: '1.5rem'
     },
     padding: 30
   }
