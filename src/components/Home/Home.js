@@ -1,37 +1,66 @@
 import React from 'react'
 import { lightBlue } from '@material-ui/core/colors'
-import FloatingItem from './FloatingItem';
-import LandingBackground from '../../assets/laptop_table_background_3.jpg';
-import { ButtonBase, Box, makeStyles, Typography } from '@material-ui/core';
-import NavItem from './NavItem';
+import LandingBackground from '../../assets/landing_background.jpeg';
+import { Box, makeStyles, Typography, Grid } from '@material-ui/core';
+import About from './About';
+import Skills from './Skills';
+import NavigationMenu from '../Nav/NavigationMenu';
+import Work from '../Work/Work';
 
 
 const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <Box className={classes.landing}>
-        <NavItem>About</NavItem>
-        <NavItem>Work</NavItem>
-        <NavItem>Contact</NavItem>
-      </Box>
-      <div style={{ width: '100%', height: '1000px' }}></div>
+      <NavigationMenu />
+      <Grid container direction="column" justify="space-between" className={classes.landing}>
+        <Grid item>
+          <Typography variant="h1" className={classes.primaryText}>I'm Connor,</Typography>
+          <Typography variant="h4" className={classes.secondaryText}>a full-stack engineer.</Typography>
+        </Grid>
+        <Grid item>
+          <Skills />
+        </Grid>
+      </Grid>
+      <About />
+      <Work />
     </>
   )
 }
 
 const useStyles = makeStyles(theme => ({
   landing: {
-    width: '100%',
-    height: '100vh',
+    padding: 10,
+    minHeight: '100vh',
+    backgroundColor: "black",
     backgroundImage: `url(${LandingBackground})`,
     backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    [theme.breakpoints.up('sm')]: {
-      // backgroundAttachment: 'fixed'
+    backgroundPosition: 'bottom',
+    backgroundAttachment: 'fixed',
+    display: 'flex',
+    alignItems: 'space-between',
+    overflow: 'hidden',
+  },
+  primaryText: {
+    paddingLeft: 15,
+    paddingTop: 15,
+    color: theme.palette.text.primary,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '3.5rem'
+    },
+    mixBlendMode: 'difference'
+  },
+  secondaryText: {
+    paddingLeft: 15,
+    color: theme.palette.text.primary,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.5rem'
     }
   },
-
+  skillsContainer: {
+    display: 'flex-column',
+    alignItems: 'flex-end'
+  }
 }));
 
 export default Home;

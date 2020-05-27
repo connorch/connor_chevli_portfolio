@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Typography, Divider } from '@material-ui/core';
-import { green } from '@material-ui/core/colors';
+import { Box, Typography } from '@material-ui/core';
 import WorkEntry from './WorkEntry';
 import WORK_ENTRY_TYPES from '../../constants/WorkEntryTypes';
 import Footer from '../Footer';
 import NavBar from '../NavBar';
+import { lightBlue } from '@material-ui/core/colors';
 
 const Work = () => {
   const classes = useStyles();
@@ -13,17 +13,16 @@ const Work = () => {
 
   return (
     <Fragment>
-      <NavBar />
       <Box className={classes.workContainer}>
-        <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+        <Typography variant="h2" align="center" color="secondary" gutterBottom>
           Professional Experience
-      </Typography>
+        </Typography>
         {
           experience.professional.map((company) => (
             <WorkEntry workData={company} entryType={WORK_ENTRY_TYPES.professional} />
           ))
         }
-        <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+        <Typography variant="h2" align="center" color="secondary" gutterBottom>
           Projects
       </Typography>
         {
@@ -39,7 +38,7 @@ const Work = () => {
 const useStyles = makeStyles(theme => ({
   workContainer: {
     paddingTop: 100,
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.grey[900]
   },
 }));
 

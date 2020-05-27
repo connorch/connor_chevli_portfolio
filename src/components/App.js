@@ -1,41 +1,43 @@
 import React from 'react';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import NavBar from './NavBar';
-import About from './About/About';
-import Contact from './Contact';
-import Work from './Work/Work';
-import { blueGrey } from '@material-ui/core/colors';
+import { blueGrey, lightBlue, red, grey } from '@material-ui/core/colors';
 import { Route, Switch } from 'react-router-dom';
 import InteractiveHomepage from './Home/Home';
 
 const appTheme = createMuiTheme({
   palette: {
     primary: {
-      main: blueGrey[100]
+      main: grey[900]
     },
     secondary: {
-      main: blueGrey[800]
+      main: red['A200']
     },
     text: {
-      primary: blueGrey[800],
-      secondary: blueGrey[100],
+      primary: lightBlue[200],
+      secondary: grey[50],
     },
     lightBlueGrey: blueGrey[100],
     darkBlueGrey: blueGrey[800],
   },
   typography: {
-    fontFamily: '"Lato", sans-serif',
+    fontFamily: '"Raleway", sans-serif',
     fontWeightThin: 100,
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 700,
     fontWeightBold: 900,
     h1: {
-
+      fontFamily: "Megrim",
+      lineHeight: 1,
+      fontSize: '7rem'
     },
     h2: {
-      fontWeight: 400,
-      fontSize: "3.5rem"
+      fontFamily: "Megrim",
+      fontSize: "3.5rem",
+    },
+    h3: {
+      fontFamily: '"Raleway", sans-serif',
+      fontSize: "3rem",
     },
     h6: {
       fontSize: '1rem',
@@ -49,10 +51,7 @@ const App = () => {
   return (
     <ThemeProvider theme={appTheme}>
       <Switch>
-        <Route path="/" component={About} exact />
-        <Route path="/work" component={Work} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/home" component={InteractiveHomepage} />
+        <Route path="/" component={InteractiveHomepage} />
       </Switch>
     </ThemeProvider>
   );
