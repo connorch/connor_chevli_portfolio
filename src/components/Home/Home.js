@@ -13,7 +13,7 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <NavigationMenu />
+      {/* <NavigationMenu /> */}
       <Grid container direction="column" justify="space-between" className={classes.landing}>
         <Grid item>
           <Typography variant="h1" className={classes.primaryText}>I'm Connor,</Typography>
