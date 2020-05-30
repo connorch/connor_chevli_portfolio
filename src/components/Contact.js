@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Grid, TextField, makeStyles, IconButton, Paper, Box, Typography, withStyles } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 
@@ -25,7 +25,7 @@ const Contact = () => {
   const classes = useStyles();
 
   return (
-    <Fragment>
+    <>
       <Box className={classes.container}>
         <Typography variant="h2" color="secondary" align="center" gutterBottom>Let's connect.</Typography>
         <Paper className={classes.paper}>
@@ -96,7 +96,7 @@ const Contact = () => {
           </form>
         </Paper>
       </Box>
-    </Fragment>
+    </>
   );
 }
 

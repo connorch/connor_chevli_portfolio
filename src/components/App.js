@@ -16,8 +16,6 @@ const appTheme = createMuiTheme({
       primary: lightBlue[200],
       secondary: grey[50],
     },
-    lightBlueGrey: blueGrey[100],
-    darkBlueGrey: blueGrey[800],
   },
   typography: {
     fontFamily: '"Raleway", sans-serif',
