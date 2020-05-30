@@ -3,7 +3,6 @@ import LandingBackground from '../assets/landing_background.jpeg';
 import { makeStyles, Typography, Grid } from '@material-ui/core';
 import About from './About';
 import Skills from './Skills/Skills';
-import NavigationMenu from './Nav/NavigationMenu';
 import Work from './Work/Work';
 import Contact from './Contact';
 import Footer from './Footer';
@@ -13,7 +12,6 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
-      {/* <NavigationMenu /> */}
       <Grid container direction="column" justify="space-between" className={classes.landing}>
         <Grid item>
           <Typography variant="h1" className={classes.primaryText}>I'm Connor,</Typography>
