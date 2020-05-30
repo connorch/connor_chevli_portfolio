@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { blueGrey, lightBlue, red, grey } from '@material-ui/core/colors';
 import { Route, Switch } from 'react-router-dom';
-import InteractiveHomepage from './Home/Home';
+import InteractiveHomepage from './Home';
 
 const appTheme = createMuiTheme({
   palette: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Typography, Grid } from '@material-ui/core';
-import PortraitImage from '../../assets/portrait_circle.png';
+import PortraitImage from '../assets/portrait_circle.png';
 
 
 const About = () => {
