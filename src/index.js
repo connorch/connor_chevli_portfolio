@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import firebase from './firebase.js';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
