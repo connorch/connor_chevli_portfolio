@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles, ButtonBase, Typography, useTheme } from '@material-ui/core';
 import FloatingItem from '../UtilityComponents/FloatingItem';
-import { lightBlue, red } from '@material-ui/core/colors';
 import { useSpring } from 'react-spring';
 
 const NavItem = ({ children, id, isSelected, selectNavItem, href }) => {

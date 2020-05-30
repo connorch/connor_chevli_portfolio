@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles, Typography, useTheme } from '@material-ui/core';
-import { grey, red, lightBlue } from '@material-ui/core/colors';
+import { grey } from '@material-ui/core/colors';
 import { useSpring, config } from 'react-spring';
 import FloatingItem from '../UtilityComponents/FloatingItem';
 

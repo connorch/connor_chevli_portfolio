@@ -1,6 +1,6 @@
 import React from 'react'
 import LandingBackground from '../../assets/landing_background.jpeg';
-import { Box, makeStyles, Typography, Grid } from '@material-ui/core';
+import { makeStyles, Typography, Grid } from '@material-ui/core';
 import About from './About';
 import Skills from './Skills';
 import NavigationMenu from '../Nav/NavigationMenu';

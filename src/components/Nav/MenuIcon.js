@@ -1,6 +1,5 @@
 import React from 'react';
 import { animated, useSpring, config } from 'react-spring'
-import { lightBlue } from '@material-ui/core/colors';
 import { useTheme } from '@material-ui/core';
 
 const openedTransformation = {

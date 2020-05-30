@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { makeStyles, ButtonGroup, Button, useMediaQuery, useTheme } from '@material-ui/core';
-import { lightBlue } from '@material-ui/core/colors';
+import { makeStyles, ButtonGroup, Button } from '@material-ui/core';
 import Skill from './Skill';
-import PortraitImage from '../../assets/portrait_image_filtered.png';
 
 const Skills = () => {
   const classes = useStyles();
