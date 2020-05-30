@@ -9,8 +9,8 @@ const NavigationMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  let enableScrollLogic = true;
   useEffect(() => {
+    let enableScrollLogic = true;
     const handleScroll = e => {
       if (!enableScrollLogic) return;
       enableScrollLogic = false;
