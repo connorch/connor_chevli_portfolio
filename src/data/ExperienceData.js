@@ -5,7 +5,7 @@ const professional = [
     description: "B2B Initiative",
     startDate: "February 2020",
     endDate: "Present",
-    companyUrl: "https://www.acornpack.com/",
+    url: "https://www.acornpack.com/",
     bullets: [
       "Architect Koa and SQL backend, design UI, and lead initiatives for an upcoming B2B interface.",
       "Increase cash flow by streamlining the Vue.JS UI and lowering the barrier-to-entry for users."
@@ -17,7 +17,7 @@ const professional = [
     description: "Promotions Team",
     startDate: "January 2018",
     endDate: "February 2020",
-    companyUrl: "https://www.wayfair.com/",
+    url: "https://www.wayfair.com/",
     bullets: [
       "Create several features using JavaScript and PHP to provide an immersive UX and drive millions in sales.",
       "Implement tools with React, PHP, and MSSQL to manage sale events, promotions, and all coupon codes.",
@@ -33,7 +33,7 @@ const professional = [
     description: "Analytics Team",
     startDate: "June 2017",
     endDate: "October 2017",
-    companyUrl: "https://www.athenahealth.com/",
+    url: "https://www.athenahealth.com/",
     bullets: [
       "Create microservice Express app with connection to monolithic Perl backend for intuitive and secure navigation between analytics tools.",
       "Build out React app with Redux, CSS Modules, and SASS for efficient and scalable development of team.",
@@ -46,7 +46,7 @@ const professional = [
 const projects = [
   {
     name: "Chow",
-    description: "iOS, Android, and Web meal-ordering app that assists restaurants affected by COVID-19",
+    description: "iOS, Android, and Web meal-ordering app focused on assisting restaurants affected by COVID-19",
     bullets: [
       "Create native iOS, Android, and Web apps using Flutter framework for cross-platform development.",
       "Design and build beautiful map UI and order flow for simple and intuitive user experience.",
@@ -55,7 +55,7 @@ const projects = [
   },
   {
     name: "Journey",
-    description: "Web and Alexa powered journal and psychoanalysis tool",
+    description: "Mental-health focused journal and psychoanalysis tool, powered by Web and Alexa",
     bullets: [
       "Build RESTful API with Node, Express, and a relational DB for extensibility and maintainability.",
       "Create interactive visualizations of NLP results with D3 and React for fast rendering and easy analysis.",

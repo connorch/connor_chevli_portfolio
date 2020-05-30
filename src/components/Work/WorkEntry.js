@@ -11,7 +11,7 @@ import JourneyImage from '../../assets/journey_screenshot.png';
 import { Box, ButtonBase, Divider } from '@material-ui/core';
 
 const WorkEntry = ({ workData, entryType }) => {
-  const { name, title, description, startDate, endDate, bullets } = workData;
+  const { name, title, description, url, startDate, endDate, bullets } = workData;
   const classes = useStyles();
 
   const workImages = {
@@ -27,7 +27,7 @@ const WorkEntry = ({ workData, entryType }) => {
       <Box className={classes.section}>
         <Grid container spacing={4} justify="center">
           <Grid item >
-            <ButtonBase>
+            <ButtonBase href={url} target="_blank">
               <img className={classes.image} alt="complex" src={workImages[name]} />
             </ButtonBase>
           </Grid>
