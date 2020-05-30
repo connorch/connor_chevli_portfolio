@@ -41,7 +41,6 @@ const Contact = () => {
               >
                 <CssTextField
                   variant="outlined"
-                  color="textPrimary"
                   label="Name"
                   id="name"
                   name="name"
@@ -57,7 +56,6 @@ const Contact = () => {
               >
                 <CssTextField
                   variant="outlined"
-                  color="textPrimary"
                   label="Email"
                   id="email"
                   name="email"
@@ -71,7 +69,6 @@ const Contact = () => {
               <Grid item xs={12}>
                 <CssTextField
                   variant="outlined"
-                  color="textPrimary"
                   label="Message"
                   id="message"
                   name="message"

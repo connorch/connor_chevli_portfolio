@@ -9,7 +9,6 @@ import AthenahealthLogo from '../../assets/athenahealth_logo.svg';
 import ChowImage from '../../assets/chow_map.png';
 import JourneyImage from '../../assets/journey_screenshot.png';
 import { Box, ButtonBase, Divider } from '@material-ui/core';
-import { red } from '@material-ui/core/colors';
 
 const WorkEntry = ({ workData, entryType }) => {
   const { name, title, description, startDate, endDate, bullets } = workData;
@@ -49,8 +48,8 @@ const WorkEntry = ({ workData, entryType }) => {
                 </Typography>
               </Grid>
               <Grid item container spacing={1}>
-                {bullets.map(bullet => (
-                  <Grid item>
+                {bullets.map((bullet, index) => (
+                  <Grid item key={index}>
                     <Typography variant="body1" color="textSecondary"><BulletPoint className={classes.bulletPoint} />{bullet}</Typography>
                   </Grid>
                 ))}
@@ -73,27 +72,6 @@ const useStyles = makeStyles((theme) => ({
   divider: {
     marginTop: 30,
     backgroundColor: theme.palette.grey[800]
-  },
-  // Acornpack: {
-  //   backgroundColor: deepOrange[100]
-  // },
-  // Wayfair: {
-  //   backgroundColor: deepPurple[100]
-  // },
-  // athenahealth: {
-  //   backgroundColor: lightGreen[100]
-  // },
-  // Chow: {
-  //   backgroundColor: blueGrey[100]
-  // },
-  // Journey: {
-  //   backgroundColor: deepPurple[100]
-  // },
-  professional: {
-    backgroundColor: 'transparent'
-  },
-  projects: {
-    backgroundColor: red[300]
   },
   image: {
     margin: 'auto',

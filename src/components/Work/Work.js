@@ -3,9 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography } from '@material-ui/core';
 import WorkEntry from './WorkEntry';
 import WORK_ENTRY_TYPES from '../../constants/WorkEntryTypes';
-import Footer from '../Footer';
-import NavBar from '../NavBar';
-import { lightBlue } from '@material-ui/core/colors';
 
 const Work = () => {
   const classes = useStyles();
@@ -17,16 +14,16 @@ const Work = () => {
           Work Experience
         </Typography>
         {
-          experience.professional.map((company) => (
-            <WorkEntry workData={company} entryType={WORK_ENTRY_TYPES.professional} />
+          experience.professional.map((company, index) => (
+            <WorkEntry key={index} workData={company} entryType={WORK_ENTRY_TYPES.professional} />
           ))
         }
         <Typography variant="h2" align="center" color="secondary" gutterBottom>
           Projects
-      </Typography>
+        </Typography>
         {
-          experience.projects.map((project) => (
-            <WorkEntry workData={project} entryType={WORK_ENTRY_TYPES.projects} />
+          experience.projects.map((project, index) => (
+            <WorkEntry key={index} workData={project} entryType={WORK_ENTRY_TYPES.projects} />
           ))
         }
       </Box>
