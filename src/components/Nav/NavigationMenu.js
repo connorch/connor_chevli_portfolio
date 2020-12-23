@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import NavItem from './NavItem';
-import MenuIcon from './MenuIcon';
-import { makeStyles, Grid, IconButton, Collapse } from '@material-ui/core';
+import React, { useState, useEffect } from "react";
+import NavItem from "./NavItem";
+import MenuIcon from "./MenuIcon";
+import { makeStyles, Grid, IconButton, Collapse } from "@material-ui/core";
 
 const NavigationMenu = () => {
   const classes = useStyles();
@@ -11,30 +11,39 @@ const NavigationMenu = () => {
 
   useEffect(() => {
     let enableScrollLogic = true;
-    const handleScroll = e => {
+    const handleScroll = (e) => {
       if (!enableScrollLogic) return;
       enableScrollLogic = false;
       setIsOpen(false);
       // Let's throttle the scrolling event so it doesn't get triggered like crazy.
-      setTimeout(() => enableScrollLogic = true, 1000);
-    }
-    document.addEventListener('scroll', handleScroll, { passive: true })
+      setTimeout(() => (enableScrollLogic = true), 1000);
+    };
+    document.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      document.removeEventListener('scroll', handleScroll);
-    }
+      document.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   const selectNavItem = (navItemId) => {
     setSelectedItem(navItemId);
-  }
+  };
 
   return (
-    <Grid container direction="column" alignItems="flex-end" className={classes.navMenu}>
-      <Grid item><IconButton onClick={toggleMenu}><MenuIcon isOpen={isOpen} /></IconButton></Grid>
+    <Grid
+      container
+      direction="column"
+      alignItems="flex-end"
+      className={classes.navMenu}
+    >
+      <Grid item>
+        <IconButton onClick={toggleMenu}>
+          <MenuIcon isOpen={isOpen} />
+        </IconButton>
+      </Grid>
       {NAV_ITEMS_DATA.map(({ text, id, href }) => (
         <Collapse in={isOpen} disableStrictModeCompat key={id}>
           <Grid item>
@@ -53,7 +62,7 @@ const NavigationMenu = () => {
   );
 };
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   navMenu: {
     position: "fixed",
     padding: 10,
@@ -62,25 +71,25 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 300,
     right: 0,
     zIndex: 1,
-    mixBlendMode: 'difference'
+    mixBlendMode: "difference",
   },
 }));
 
 const NAV_ITEMS_DATA = [
   {
-    id: 'about',
+    id: "about",
     text: "About",
-    href: "#"
+    href: "#",
   },
   {
-    id: 'work',
+    id: "work",
     text: "Work",
-    href: "#"
+    href: "#",
   },
   {
-    id: 'contact',
+    id: "contact",
     text: "Contact",
-    href: "#"
+    href: "#",
   },
 ];
 

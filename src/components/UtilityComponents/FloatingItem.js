@@ -1,21 +1,22 @@
-import React from 'react';
-import { animated, useSpring } from 'react-spring';
+import React from "react";
+import { animated, useSpring } from "react-spring";
 
 const X_AXIS_MAX_DEGREES_ROTATION = 20;
 const Y_AXIS_MAX_DEGREES_ROTATION = 20;
 
-const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+const trans = (x, y, s) =>
+  `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-const FloatingItem = ({ children, className, color, component = 'div' }) => {
+const FloatingItem = ({ children, className, color, component = "div" }) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
-    position: 'static',
-    zIndex: 'auto',
+    position: "static",
+    zIndex: "auto",
     config: {
       mass: 10,
       tension: 500,
-      friction: 50
-    }
+      friction: 50,
+    },
   }));
 
   const calculateRotation = ({ clientX, clientY, target }) => {
@@ -24,13 +25,13 @@ const FloatingItem = ({ children, className, color, component = 'div' }) => {
       x: elemX,
       y: elemY,
       width: elemWidth,
-      height: elemHeight
+      height: elemHeight,
     } = target.getBoundingClientRect();
 
     // Get the percentage distance from the center.
     const mouseDistanceFromElemCenter = {
       x: (clientX - (elemX + elemWidth / 2)) / (elemWidth / 2),
-      y: (clientY - (elemY + elemHeight / 2)) / (elemHeight / 2)
+      y: (clientY - (elemY + elemHeight / 2)) / (elemHeight / 2),
     };
 
     // Set rotation
@@ -38,27 +39,28 @@ const FloatingItem = ({ children, className, color, component = 'div' }) => {
       xys: [
         -mouseDistanceFromElemCenter.y * X_AXIS_MAX_DEGREES_ROTATION,
         mouseDistanceFromElemCenter.x * Y_AXIS_MAX_DEGREES_ROTATION,
-        1.1
+        1.1,
       ],
-      position: 'relative',
-      zIndex: 1
+      position: "relative",
+      zIndex: 1,
     });
-  }
+  };
 
   return (
     <animated.div
       className={className}
       onMouseMove={calculateRotation}
-      onMouseLeave={() => set({ xys: [0, 0, 1], position: 'static' })}
+      onMouseLeave={() => set({ xys: [0, 0, 1], position: "static" })}
       style={{
         transform: props.xys.interpolate(trans),
-        color, position: props.position,
-        zIndex: props.zIndex
+        color,
+        position: props.position,
+        zIndex: props.zIndex,
       }}
     >
       {children}
-    </animated.div >
-  )
-}
+    </animated.div>
+  );
+};
 
 export default FloatingItem;

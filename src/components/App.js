@@ -1,16 +1,16 @@
-import React from 'react';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { lightBlue, red, grey } from '@material-ui/core/colors';
-import { Route, Switch } from 'react-router-dom';
-import InteractiveHomepage from './Home';
+import React from "react";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { lightBlue, red, grey } from "@material-ui/core/colors";
+import { Route, Switch } from "react-router-dom";
+import InteractiveHomepage from "./Home";
 
 const appTheme = createMuiTheme({
   palette: {
     primary: {
-      main: grey[900]
+      main: grey[900],
     },
     secondary: {
-      main: red['A200']
+      main: red["A200"],
     },
     text: {
       primary: lightBlue[200],
@@ -27,7 +27,7 @@ const appTheme = createMuiTheme({
     h1: {
       fontFamily: "Megrim",
       lineHeight: 1,
-      fontSize: '7rem'
+      fontSize: "7rem",
     },
     h2: {
       fontFamily: "Megrim",
@@ -38,9 +38,9 @@ const appTheme = createMuiTheme({
       fontSize: "3rem",
     },
     h6: {
-      fontSize: '1rem',
+      fontSize: "1rem",
       fontWeight: 300,
-      lineHeight: 1.4
+      lineHeight: 1.4,
     },
   },
 });
@@ -53,6 +53,6 @@ const App = () => {
       </Switch>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

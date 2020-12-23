@@ -1,121 +1,121 @@
 const skillTypes = {
   frontend: {
-    id: 'frontend',
-    group: 'stack',
+    id: "frontend",
+    group: "stack",
   },
   backend: {
-    id: 'backend',
-    group: 'stack',
+    id: "backend",
+    group: "stack",
   },
-}
+};
 
 const { frontend, backend } = skillTypes;
 
 const skills = [
   {
     name: "JavaScript (ES9)",
-    types: { frontend, backend }
+    types: { frontend, backend },
   },
   {
     name: "React",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "PHP",
-    types: { backend }
+    types: { backend },
   },
   {
     name: "Redux",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "NodeJS",
-    types: { backend }
+    types: { backend },
   },
   {
     name: "Dart",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "Flutter",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "ExpressJS",
-    types: { backend }
+    types: { backend },
   },
   {
     name: "GraphQL",
-    types: { frontend, backend }
+    types: { frontend, backend },
   },
   {
     name: "D3",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "Gulp",
-    types: { backend }
+    types: { backend },
   },
   {
     name: "Vue.js",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "AWS ECS",
-    types: {}
+    types: {},
   },
   {
     name: "AngularJS",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "Perl",
-    types: { backend }
+    types: { backend },
   },
   {
     name: "Koa",
-    types: { backend }
+    types: { backend },
   },
   {
     name: "HTML5",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "CSS",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "Redis",
-    types: { backend }
+    types: { backend },
   },
   {
     name: "Webpack",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "SASS",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "SQL",
-    types: { backend }
+    types: { backend },
   },
   {
     name: "jQuery",
-    types: { frontend }
+    types: { frontend },
   },
   {
     name: "MongoDB",
-    types: { backend }
+    types: { backend },
   },
   {
     name: "Memcached",
-    types: { backend }
+    types: { backend },
   },
   {
     name: "React-Native",
-    types: { frontend }
+    types: { frontend },
   },
 ];
 
-export { skills, skillTypes }
+export { skills, skillTypes };
