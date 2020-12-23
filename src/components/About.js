@@ -12,8 +12,8 @@ const About = () => {
       <Grid item>
         <Typography className={classes.text} variant="h4">
           I’m a full-stack web developer based in Boston, MA. I love bringing
-          ideas to life, manipulating complex data sets, and creating beatiful
-          user experiences.
+          ideas to life, manipulating complex data, and creating beatiful user
+          experiences.
         </Typography>
       </Grid>
     </Grid>

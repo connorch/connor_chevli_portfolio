@@ -8,6 +8,7 @@ import WayfairLogo from "../../assets/wayfair_logo.svg";
 import AthenahealthLogo from "../../assets/athenahealth_logo.svg";
 import ChowImage from "../../assets/chow_map.png";
 import JourneyImage from "../../assets/journey_screenshot.png";
+import IRacingImage from "../../assets/iracing_logo.png";
 import { Box, ButtonBase, Divider } from "@material-ui/core";
 
 const WorkEntry = ({ workData, entryType }) => {
@@ -28,6 +29,7 @@ const WorkEntry = ({ workData, entryType }) => {
     athenahealth: AthenahealthLogo,
     Chow: ChowImage,
     Journey: JourneyImage,
+    iRacing: IRacingImage,
   };
 
   return (

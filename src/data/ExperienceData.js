@@ -1,10 +1,21 @@
 const professional = [
   {
+    name: "iRacing",
+    title: "Web Developer",
+    description: "iRacing UI Team",
+    startDate: "June 2020",
+    endDate: "Present",
+    url: "https://www.iracing.com/",
+    bullets: [
+      "Building an incredible interface in React and electron for racers to join and host sessions, customize their driver and car, manage their leagues and teams, and race alongside their friends.",
+    ],
+  },
+  {
     name: "Acornpack",
     title: "Principal Software Engineer",
     description: "B2B Initiative",
     startDate: "February 2020",
-    endDate: "Present",
+    endDate: "May 2020",
     url: "https://www.acornpack.com/",
     bullets: [
       "Architect Koa and SQL backend, design UI, and lead initiatives for an upcoming B2B interface.",
