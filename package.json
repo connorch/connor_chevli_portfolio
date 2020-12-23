@@ -33,6 +33,7 @@
     ]
   },
   "devDependencies": {
-    "file-loader": "^6.0.0"
+    "file-loader": "^6.0.0",
+    "prettier": "2.2.1"
   }
 }
