@@ -37,6 +37,10 @@ const appTheme = createMuiTheme({
       fontFamily: '"Raleway", sans-serif',
       fontSize: "3rem",
     },
+    h4: {
+      fontFamily: '"Raleway", sans-serif',
+      fontSize: "2rem",
+    },
     h6: {
       fontSize: "1rem",
       fontWeight: 300,

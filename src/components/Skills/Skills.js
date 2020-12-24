@@ -59,11 +59,19 @@ const useStyles = makeStyles((theme) => ({
   buttonGroup: {
     marginTop: 20,
     marginBottom: 20,
-    paddingLeft: 10,
+    textAlign: "center",
   },
   button: {
-    mixBlendMode: "difference",
+    // mixBlendMode: "difference",
     color: theme.palette.secondary.main,
+    borderColor: theme.palette.secondary.main,
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      height: 70,
+      ...theme.typography.h5,
+      fontFamily: '"Raleway", sans-serif',
+      // borderWidth: 2,
+    },
   },
   skills: {
     margin: "0 auto",
