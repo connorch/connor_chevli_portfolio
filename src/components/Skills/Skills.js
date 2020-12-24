@@ -62,7 +62,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   button: {
-    // mixBlendMode: "difference",
     color: theme.palette.secondary.main,
     borderColor: theme.palette.secondary.main,
     width: "100%",
@@ -70,7 +69,6 @@ const useStyles = makeStyles((theme) => ({
       height: 70,
       ...theme.typography.h5,
       fontFamily: '"Raleway", sans-serif',
-      // borderWidth: 2,
     },
   },
   skills: {
