@@ -1,10 +1,24 @@
 const professional = [
   {
+    name: "Surjon",
+    title: "Principal Architect and Designer",
+    description:
+      "building a feedback platform to improve surgical skills of medical residents.",
+    startDate: "Jan 2021",
+    endDate: "Present",
+    bullets: [
+      "Leverage React-Native, Expo, and Firebase for rapid development of responsive iOS/Android app.",
+      "Create UI for doctors and residents to exchange feedback, improve surgical skills, and track improvement.",
+      "Architect complex Firestore DB with Firebase auth and cloud functions for scalability and fast reads.",
+      "Design full app prototype in AdobeXD for swift concept design while collaborating with stakeholders.",
+    ],
+  },
+  {
     name: "iRacing",
     title: "Web Developer",
-    description: "iRacing UI Team",
+    description: "on the iRacing UI Team",
     startDate: "June 2020",
-    endDate: "Present",
+    endDate: "Feb 2021",
     url: "https://www.iracing.com/",
     bullets: [
       "Building an incredible interface in React and electron for racers to join and host sessions, customize their driver and car, manage their leagues and teams, and race alongside their friends.",
@@ -13,7 +27,7 @@ const professional = [
   {
     name: "Acornpack",
     title: "Principal Software Engineer",
-    description: "B2B Initiative",
+    description: "on the B2B Initiative",
     startDate: "February 2020",
     endDate: "May 2020",
     url: "https://www.acornpack.com/",
@@ -25,7 +39,7 @@ const professional = [
   {
     name: "Wayfair",
     title: "Software Engineer",
-    description: "Promotions Team",
+    description: "on the Promotions Team",
     startDate: "January 2018",
     endDate: "February 2020",
     url: "https://www.wayfair.com/",
@@ -41,7 +55,7 @@ const professional = [
   {
     name: "athenahealth",
     title: "Software Engineer",
-    description: "Analytics Team",
+    description: "on the Analytics Team",
     startDate: "June 2017",
     endDate: "October 2017",
     url: "https://www.athenahealth.com/",

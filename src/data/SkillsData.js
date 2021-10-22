@@ -21,6 +21,10 @@ const skills = [
     types: { frontend },
   },
   {
+    name: "React-Native",
+    types: { frontend },
+  },
+  {
     name: "PHP",
     types: { backend },
   },
@@ -58,6 +62,10 @@ const skills = [
   },
   {
     name: "Vue.js",
+    types: { frontend },
+  },
+  {
+    name: "Expo",
     types: { frontend },
   },
   {
@@ -111,10 +119,6 @@ const skills = [
   {
     name: "Memcached",
     types: { backend },
-  },
-  {
-    name: "React-Native",
-    types: { frontend },
   },
 ];
 

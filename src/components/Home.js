@@ -1,5 +1,5 @@
 import React from "react";
-import LandingBackground from "../assets/landing_background.jpeg";
+import LandingBackground from "../assets/landing_background.jpg";
 import { makeStyles, Typography, Grid } from "@material-ui/core";
 import About from "./About";
 import Skills from "./Skills/Skills";
@@ -22,7 +22,7 @@ const Home = () => {
             I'm Connor,
           </Typography>
           <Typography variant="h4" className={classes.secondaryText}>
-            a full-stack engineer.
+            a software engineer bringing life to the web.
           </Typography>
         </Grid>
         <Grid item>

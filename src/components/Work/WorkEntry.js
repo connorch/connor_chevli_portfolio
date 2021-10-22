@@ -9,6 +9,7 @@ import AthenahealthLogo from "../../assets/athenahealth_logo.svg";
 import ChowImage from "../../assets/chow_map.png";
 import JourneyImage from "../../assets/journey_screenshot.png";
 import IRacingImage from "../../assets/iracing_logo.png";
+import SurjonImage from "../../assets/NoxyBird.png";
 import { Box, ButtonBase, Divider } from "@material-ui/core";
 
 const WorkEntry = ({ workData, entryType }) => {
@@ -30,6 +31,7 @@ const WorkEntry = ({ workData, entryType }) => {
     Chow: ChowImage,
     Journey: JourneyImage,
     iRacing: IRacingImage,
+    Surjon: SurjonImage,
   };
 
   return (
@@ -61,7 +63,7 @@ const WorkEntry = ({ workData, entryType }) => {
               )}
               <Grid item>
                 <Typography variant="h6" color="textSecondary" gutterBottom>
-                  {title && `${title} on the `}
+                  {title && `${title} `}
                   {description}
                 </Typography>
               </Grid>
