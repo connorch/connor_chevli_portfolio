@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { makeStyles, ButtonGroup, Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import Skill from "./Skill";
-import { skills, skillTypes } from "../../data/SkillsData";
+import { skills } from "../../data/SkillsData";
 import StackToggle from "./StackToggle";
 
 const Skills = () => {
   const classes = useStyles();
 
   const [selectedSkillType, setSelectedSkillType] = useState({});
-
-  const getButtonVariant = (id) =>
-    id === selectedSkillType.id ? "contained" : "outlined";
 
   const filterSkills = (skillType) =>
     setSelectedSkillType(

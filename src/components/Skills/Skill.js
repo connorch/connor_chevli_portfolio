@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: 30,
     },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 26,
+    },
   },
 }));
 

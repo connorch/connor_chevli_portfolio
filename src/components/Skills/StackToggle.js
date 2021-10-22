@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     color: theme.palette.secondary.main,
     borderColor: theme.palette.secondary.main,
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       height: 70,
       ...theme.typography.h5,
       fontFamily: '"Raleway", sans-serif',

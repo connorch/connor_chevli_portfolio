@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
   landing: {
     padding: 10,
     minHeight: "100vh",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "calc(100vh - 108px)",
+    },
     backgroundColor: "black",
     backgroundImage: `url(${LandingBackground})`,
     backgroundSize: "cover",
