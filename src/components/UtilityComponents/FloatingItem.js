@@ -1,8 +1,9 @@
 import React from "react";
 import { animated, useSpring } from "react-spring";
 
-const X_AXIS_MAX_DEGREES_ROTATION = 20;
-const Y_AXIS_MAX_DEGREES_ROTATION = 20;
+// How much the item will rotate relative to mouse distance from item center. (higher = more wobbly)
+const X_AXIS_MAX_DEGREES_ROTATION = 10;
+const Y_AXIS_MAX_DEGREES_ROTATION = 10;
 
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
