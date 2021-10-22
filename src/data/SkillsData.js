@@ -120,6 +120,14 @@ const skills = [
     name: "Memcached",
     types: { backend },
   },
+  {
+    name: "Sketch",
+    types: { frontend },
+  },
+  {
+    name: "AdobeXD",
+    types: { frontend },
+  },
 ];
 
 export { skills, skillTypes };

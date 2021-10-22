@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { makeStyles, ButtonGroup, Button } from "@material-ui/core";
 import Skill from "./Skill";
 import { skills, skillTypes } from "../../data/SkillsData";
+import StackToggle from "./StackToggle";
 
 const Skills = () => {
   const classes = useStyles();
@@ -23,23 +24,11 @@ const Skills = () => {
 
   return (
     <div>
-      <div className={classes.buttonGroup}>
-        <ButtonGroup size="large">
-          <Button
-            className={classes.button}
-            variant={getButtonVariant(skillTypes.frontend.id)}
-            onClick={() => filterSkills(skillTypes.frontend)}
-          >
-            Frontend
-          </Button>
-          <Button
-            className={classes.button}
-            variant={getButtonVariant(skillTypes.backend.id)}
-            onClick={() => filterSkills(skillTypes.backend)}
-          >
-            Backend
-          </Button>
-        </ButtonGroup>
+      <div className={classes.stackToggleContainer}>
+        <StackToggle
+          filterSkills={filterSkills}
+          selectedSkillType={selectedSkillType}
+        />
       </div>
       <div className={classes.skills}>
         {skills.map((skill) => (
@@ -56,10 +45,10 @@ const Skills = () => {
 };
 
 const useStyles = makeStyles((theme) => ({
-  buttonGroup: {
-    marginTop: 20,
-    marginBottom: 20,
-    textAlign: "center",
+  stackToggleContainer: {
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    marginBottom: theme.spacing(5),
   },
   button: {
     color: theme.palette.secondary.main,
