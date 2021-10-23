@@ -73,6 +73,10 @@ const skills = [
     types: {},
   },
   {
+    name: "Firebase",
+    types: { backend },
+  },
+  {
     name: "AngularJS",
     types: { frontend },
   },

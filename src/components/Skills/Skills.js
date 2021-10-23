@@ -43,9 +43,12 @@ const Skills = () => {
 
 const useStyles = makeStyles((theme) => ({
   stackToggleContainer: {
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
+    margin: `0 auto`,
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
     marginBottom: theme.spacing(5),
+    marginTop: theme.spacing(5),
+    maxWidth: 500, // max width of the stack toggle
   },
   button: {
     color: theme.palette.secondary.main,

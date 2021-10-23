@@ -81,6 +81,8 @@ const useStyles = makeStyles((theme) => ({
     borderColor: theme.palette.secondary.main,
     [theme.breakpoints.up("md")]: {
       height: 70,
+      paddingLeft: 50,
+      paddingRight: 50,
       ...theme.typography.h5,
       fontFamily: '"Raleway", sans-serif',
     },
