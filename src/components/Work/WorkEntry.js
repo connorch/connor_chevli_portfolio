@@ -10,6 +10,7 @@ import ChowImage from "../../assets/chow_map.png";
 import JourneyImage from "../../assets/journey_screenshot.png";
 import IRacingImage from "../../assets/iracing_logo.png";
 import SurjonImage from "../../assets/NoxyBird.png";
+import AvaLabsImage from "../../assets/ava_labs_logo.svg";
 import { Box, ButtonBase, Divider } from "@material-ui/core";
 
 const WorkEntry = ({ workData, entryType }) => {
@@ -32,6 +33,7 @@ const WorkEntry = ({ workData, entryType }) => {
     Journey: JourneyImage,
     iRacing: IRacingImage,
     Surjon: SurjonImage,
+    "Ava Labs": AvaLabsImage,
   };
 
   return (

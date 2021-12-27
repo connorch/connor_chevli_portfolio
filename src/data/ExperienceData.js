@@ -1,11 +1,19 @@
 const professional = [
   {
+    name: "Ava Labs",
+    title: "Senior UI Engineer",
+    description: "building React apps for the Avalanche blockchain.",
+    startDate: "Nov 2021",
+    endDate: "Present",
+    bullets: [],
+  },
+  {
     name: "Surjon",
     title: "Principal Architect and Designer",
     description:
       "building a feedback platform to improve surgical skills of medical residents.",
     startDate: "Jan 2021",
-    endDate: "Present",
+    endDate: "Nov 2021",
     bullets: [
       "Leverage React-Native, Expo, and Firebase for rapid development of responsive iOS/Android app.",
       "Create UI for doctors and residents to exchange feedback, improve surgical skills, and track improvement.",

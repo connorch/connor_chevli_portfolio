@@ -69,6 +69,10 @@ const skills = [
     types: { frontend },
   },
   {
+    name: "Web3",
+    types: {backend, frontend},
+  },
+  {
     name: "AWS ECS",
     types: {},
   },
@@ -99,6 +103,10 @@ const skills = [
   {
     name: "Redis",
     types: { backend },
+  },
+  {
+    name: "Vite",
+    types: { frontend },
   },
   {
     name: "Webpack",
